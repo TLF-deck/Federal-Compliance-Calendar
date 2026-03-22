@@ -44,17 +44,6 @@
   /* WRAPPER */
   .cal-wrap { max-width: 960px; margin: 0 auto; padding: 48px 24px 64px; }
  
-  /* COMPANION BADGE */
-  .companion-badge {
-    display: inline-flex; align-items: center; gap: 8px;
-    background: var(--purple-bg); color: var(--purple);
-    font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase;
-    padding: 6px 14px; border-radius: 3px; margin-bottom: 20px;
-    border: 1px solid rgba(74,46,122,0.2);
-  }
-  .companion-badge a { color: var(--purple); text-decoration: none; font-weight: 700; border-bottom: 1px solid rgba(74,46,122,0.35); }
-  .companion-badge a:hover { border-bottom-color: var(--purple); }
- 
   /* HEADER */
   .cal-header { margin-bottom: 36px; animation: fadeUp 0.5s ease both 0.05s; }
   .cal-eyebrow { font-size: 10px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--accent); display: flex; align-items: center; gap: 10px; margin-bottom: 14px; }
@@ -126,11 +115,6 @@
   .entry-ready ul li { font-size: 13px; color: var(--body); padding-left: 18px; position: relative; }
   .entry-ready ul li::before { content: '→'; position: absolute; left: 0; color: var(--accent); font-size: 11px; top: 1px; }
  
-  .entry-tlf-link { font-size: 12px; color: var(--gray); background: #F8F5FF; border: 1px solid rgba(74,46,122,0.15); border-radius: 3px; padding: 8px 14px; margin-bottom: 12px; display: flex; align-items: center; gap: 6px; }
-  .entry-tlf-link strong { color: var(--purple); font-weight: 700; }
-  .entry-tlf-link a { color: var(--accent); text-decoration: none; font-weight: 500; }
-  .entry-tlf-link a:hover { text-decoration: underline; }
- 
   .entry-source { font-size: 11.5px; color: var(--gray); display: flex; align-items: flex-start; gap: 5px; flex-wrap: wrap; line-height: 1.5; }
   .entry-source strong { color: var(--dark); font-weight: 700; }
   .entry-source a { color: var(--accent); text-decoration: none; font-weight: 500; }
@@ -163,22 +147,22 @@
  
 <div class="cal-band">
   <div class="cal-band-inner">
-    <span>AI & Technology Compliance</span><span>〰</span><span class="hi">K-12 Intelligence</span><span>〰</span><span>DPA · Tool Vetting · FERPA · Staff Training</span><span>〰</span><span class="hi">Incident Bulletin · Tool Vault</span><span>〰</span><span>The Language Firm</span><span>〰</span>
-    <span>AI & Technology Compliance</span><span>〰</span><span class="hi">K-12 Intelligence</span><span>〰</span><span>DPA · Tool Vetting · FERPA · Staff Training</span><span>〰</span><span class="hi">Incident Bulletin · Tool Vault</span><span>〰</span><span>The Language Firm</span><span>〰</span>
+    <span>AI & Technology Compliance</span><span>〰</span><span class="hi">K-12 Intelligence</span><span>〰</span><span>DPA · Tool Vetting · FERPA · Staff Training</span><span>〰</span><span class="hi">AI Governance · Accessibility</span><span>〰</span><span>The Language Firm</span><span>〰</span>
+    <span>AI & Technology Compliance</span><span>〰</span><span class="hi">K-12 Intelligence</span><span>〰</span><span>DPA · Tool Vetting · FERPA · Staff Training</span><span>〰</span><span class="hi">AI Governance · Accessibility</span><span>〰</span><span>The Language Firm</span><span>〰</span>
   </div>
 </div>
  
 <div class="cal-wrap">
  
   <div class="cal-header">
-    <div class="companion-badge">Companion to the <a href="https://htmlpreview.github.io/?https://github.com/TLF-deck/Federal-Compliance-Calendar/blob/153e322cc40effef788b1ec5f39025a01c44287a/the%20calendar%20I" target="_blank">Federal Compliance Calendar</a> — AI & Technology Layer</div>
     <div class="cal-eyebrow">The Language Firm — K-12 Compliance Intelligence</div>
     <h1 class="cal-title">AI & Technology<br><em>Compliance Calendar</em></h1>
     <p class="cal-desc">The federal calendar tells you when the law requires action. This calendar tells you when your AI and technology decisions create compliance exposure, before a reviewer finds the gap. No regulatory deadlines are invented. Every "recommended window" is labeled as practice, not statute.</p>
+    <p style="font-size: 12px; color: var(--gray); margin-top: 8px; letter-spacing: 0.3px;">Version: Spring 2026 &nbsp;·&nbsp; For practitioners and policy students</p>
   </div>
  
   <div class="cal-context">
-    <strong>How this calendar works differently from the Federal Compliance Calendar.</strong> Federal program deadlines are set by statute and regulation. AI and technology compliance obligations are mostly documentation-driven. They don't have a single annual filing date. What they have are <em>trigger events</em>: a tool contract that expires, a DPA that wasn't renewed, a staff training cycle that wasn't documented, a board approval that was never recorded. This calendar maps when those triggers typically hit, what the documentation gap looks like to a reviewer, and what your TLF resources connect to each window. The "Hard Deadline" entries are genuine fixed dates. Everything else is a recommended window based on when the risk typically surfaces.
+    <strong>How this calendar works.</strong> Federal program deadlines are set by statute and regulation. AI and technology compliance obligations are mostly documentation-driven — they don't have a single annual filing date. What they have are <em>trigger events</em>: a tool contract that expires, a DPA that wasn't renewed, a staff training cycle that wasn't documented, a board approval that was never recorded. This calendar maps when those triggers typically hit, what the documentation gap looks like to a reviewer, and what to do about it. The "Hard Deadline" entries are genuine fixed dates. Everything else is a recommended window based on when the risk typically surfaces.
   </div>
  
   <div class="cal-legend">
@@ -187,6 +171,7 @@
     <div class="leg-item type-action inactive" data-filter="action" onclick="filterType('action')"><div class="leg-dot action"></div>Recommended internal action</div>
     <div class="leg-item type-window inactive" data-filter="window" onclick="filterType('window')"><div class="leg-dot window"></div>Decision window — act before it closes</div>
   </div>
+  <p style="font-size: 12px; color: var(--gray); margin-bottom: 28px; line-height: 1.6;"><strong style="color: var(--dark);">Decision window</strong> means there is a period of time during which a district must act to avoid a compliance gap. Unlike a hard deadline, there is no single regulatory filing date — but if the window closes without action, the district will enter the next phase (audit season, new school year, or contract renewal) without the required documentation in place.</p>
  
   <div class="cal-quarters">
     <div class="q-pill active" data-q="all" onclick="filterQ('all')">All quarters</div>
@@ -218,11 +203,8 @@
             <li>Flag any tool accessing student data without a signed DPA on file</li>
             <li>Verify board approval is documented for each AI tool adoption since July</li>
             <li>Remove or restrict any tool that cannot produce a DPA path within 30 days</li>
-            <li>Update the approved tool list. Remove tools with defunct vendors (see Incident Bulletin)</li>
+            <li>Update the approved tool list. Remove tools with defunct vendors</li>
           </ul>
-        </div>
-        <div class="entry-tlf-link">
-          <strong>TLF resource:</strong> Check the <a href="https://www.languagefirm.org/toolvault#districtfiling" target="_blank">District Filing</a> for DPA status and vendor viability flags on tools vetted in recent issues.
         </div>
         <div class="entry-source">
           <strong>Basis:</strong> FERPA data governance requirements (20 U.S.C. §1232g) · CoSN Privacy Framework · Student Data Privacy Consortium NDPA standards
@@ -250,9 +232,6 @@
             <li>Record the tabletop session: date, participants, outcomes, and any plan amendments</li>
           </ul>
         </div>
-        <div class="entry-tlf-link">
-          <strong>TLF resource:</strong> The <a href="https://www.languagefirm.org/toolvault#bulletin" target="_blank">Weekly Incident Bulletin</a> documents real AI incidents with recommended actions. See Issue 001 onward for the PowerSchool breach response pattern and related vendor risk documentation.
-        </div>
         <div class="entry-source">
           <strong>Basis:</strong> ED Student Privacy Policy Office guidance · CISA K-12 cybersecurity recommendations · State data breach notification laws (vary by state) · FERPA breach response obligations
         </div>
@@ -277,9 +256,6 @@
             <li>Confirm parent notification language covers the tool's data collection in your annual FERPA/COPPA rights notice</li>
             <li>Document the age range of students using each tool. No student under 13 should be on a tool without a documented compliance path.</li>
           </ul>
-        </div>
-        <div class="entry-tlf-link">
-          <strong>TLF resource:</strong> The <a href="https://www.languagefirm.org/toolvault#districtfiling" target="_blank">District Filing</a> fields "Student accounts required?" and "Data used to train models?" are your first-pass COPPA signals. Conditional-rated tools require this review before student deployment.
         </div>
         <div class="entry-source">
           <strong>Source:</strong>
@@ -312,9 +288,6 @@
             <li>Output review policy written if the tool generates student-facing AI content</li>
           </ul>
         </div>
-        <div class="entry-tlf-link">
-          <strong>TLF resource:</strong> The <a href="https://www.languagefirm.org/toolvault#districtfiling" target="_blank">District Filing</a> identifies whether a tool has an accessible DPA path before you invest in the vetting process.
-        </div>
         <div class="entry-source">
           <strong>Basis:</strong> FERPA §99.31(a)(1) school official exception conditions · CoSN K-12 Cybersecurity and Privacy Framework · Student Data Privacy Consortium NDPA
         </div>
@@ -341,11 +314,8 @@
             <li>Any disciplinary or misuse incidents documented with resolution. No undocumented incidents.</li>
           </ul>
         </div>
-        <div class="entry-tlf-link">
-          <strong>TLF resource:</strong> The <a href="https://www.languagefirm.org/toolvault#findingsdigest" target="_blank">Federal Findings Digest</a> tracks federal guidance as it is published and tells you what it means for your school's documentation obligations. Subscribing before June 30 ensures your staff training documentation is aligned with current federal interpretation going into the next school year.
-        </div>
         <div class="entry-source">
-          <strong>Basis:</strong> FERPA requirements for school official access to education records (34 CFR §99.31(a)(1)) · District AUP obligations under CIPA (47 U.S.C. §254(h)) · CoSN K-12 Privacy Framework
+          <strong>Basis:</strong> FERPA school official exception conditions (34 CFR §99.31(a)(1)) — districts must maintain direct control over vendor data practices · District AUP obligations under CIPA (47 U.S.C. §254(h)) · CoSN K-12 Privacy Framework
         </div>
       </div>
     </div>
@@ -359,7 +329,7 @@
             <div class="entry-date">June 30, 2026 · DPAs on school-year terms expire; a lapsed DPA means student data sharing continues without a current agreement</div>
           </div>
         </div>
-        <p class="entry-body">Data Privacy Agreements are contracts. Most are written with a one-year term tied to the academic year. A DPA that expires on June 30 and is not renewed means the district is sharing student data with a vendor without a current agreement in effect. This is a FERPA violation that begins on July 1. This is not a "recommended review." This is a hard contract deadline that most districts do not track systematically. What a reviewer asks: Is the DPA current? Pull it. If the vendor is still active and the DPA expired six months ago, you have a gap.</p>
+        <p class="entry-body">Data Privacy Agreements are contracts. Most are written with a one-year term tied to the academic year. A DPA that expires on June 30 and is not renewed means the district is sharing student data with a vendor without a current agreement in effect. When a DPA lapses, the conditions for the FERPA school official exception (34 CFR §99.31(a)(1)) may no longer be met, creating potential FERPA exposure beginning July 1. This is not a "recommended review." This is a hard contract deadline that most districts do not track systematically. What a reviewer asks: Is the DPA current? Pull it. If the vendor is still active and the DPA expired six months ago, you have a gap.</p>
         <div class="entry-ready">
           <div class="entry-ready-label">What to complete before June 30</div>
           <ul>
@@ -369,9 +339,6 @@
             <li>Confirm vendor is still operational. Do not renew a DPA with a defunct or acquired company without reviewing what changed</li>
             <li>Document any tool you cannot get a current DPA for. That tool cannot continue to access student data</li>
           </ul>
-        </div>
-        <div class="entry-tlf-link">
-          <strong>TLF resource:</strong> The <a href="https://www.languagefirm.org/toolvault#bulletin" target="_blank">Weekly Incident Bulletin</a> and the <a href="https://www.languagefirm.org/toolvault#districtfiling" target="_blank">District Filing</a> together track vendor status flags in real time. Cross-reference your DPA file against both before renewing any contract.
         </div>
         <div class="entry-source">
           <strong>Source:</strong>
@@ -407,9 +374,6 @@
             <li>Student and parent notification in place. AI tool use disclosed in handbook or equivalent</li>
           </ul>
         </div>
-        <div class="entry-tlf-link">
-          <strong>TLF resource:</strong> The <a href="https://www.languagefirm.org/ai-data-governance#thecheckup" target="_blank">Annual AI Governance Checkup</a> produces a scored review of your deployment documentation. If you're unsure whether this year's deployments pass the sequencing test, this is the engagement that surfaces the gaps before a reviewer does.
-        </div>
         <div class="entry-source">
           <strong>Basis:</strong> FERPA 34 CFR §99.31(a)(1), school official exception requires prior agreement · CoSN Privacy Framework, deployment sequencing standard
         </div>
@@ -436,9 +400,6 @@
             <li>Data governance policy: addresses third-party AI vendor data retention and deletion rights</li>
           </ul>
         </div>
-        <div class="entry-tlf-link">
-          <strong>TLF resource:</strong> The <a href="https://www.languagefirm.org/toolvault#findingsdigest" target="_blank">Federal Findings Digest</a> tracks new federal guidance and tells you when board policy needs to catch up. The <a href="https://www.languagefirm.org/ai-data-governance#thecheckup" target="_blank">Annual AI Governance Checkup</a> scores your policy documentation and produces a findings memo you can take directly to the board.
-        </div>
         <div class="entry-source">
           <strong>Basis:</strong> CoSN K-12 Cybersecurity and Privacy Framework · CIPA internet safety policy requirements (47 U.S.C. §254(h)) · FERPA annual notification requirements (34 CFR §99.7)
         </div>
@@ -454,28 +415,51 @@
             <div class="entry-date">April 24, 2026 (districts serving 50,000+ population) · April 26, 2027 (districts serving under 50,000) · DOJ final rule, published April 24, 2024</div>
           </div>
         </div>
-        <p class="entry-body">The Department of Justice's final rule under Title II of the ADA (published April 24, 2024) requires all public school districts to make their websites, mobile apps, and digital tools accessible according to WCAG 2.1 Level AA standards. Districts serving populations of 50,000 or more must comply by April 24, 2026. Districts serving under 50,000 have until April 26, 2027. This includes digital tools used in instruction, which means every AI or edtech tool deployed to students must be verified for accessibility before that deadline. A student with a disability who cannot access an AI tool their classmates use is experiencing a denial of equal educational opportunity, which triggers OCR complaint exposure regardless of the district's size.</p>
+        <p class="entry-body">The Department of Justice's final rule under Title II of the ADA (published April 24, 2024) requires all public school districts to make their websites, mobile apps, and digital content accessible according to WCAG 2.1 Level AA standards. Districts serving populations of 50,000 or more must comply by April 24, 2026. Districts serving under 50,000 have until April 26, 2027. The Title II rule covers content the district controls directly. Separately, Section 504 of the Rehabilitation Act requires districts to ensure that students with disabilities have equal access to instruction — which means AI and edtech tools deployed in classrooms must not create barriers for students with disabilities. A student who cannot access an AI tool their classmates use due to a disability may have a cognizable Section 504 claim, regardless of the district's population size.</p>
         <div class="entry-ready">
           <div class="entry-ready-label">What to verify and document before your compliance deadline</div>
           <ul>
             <li>Confirm your compliance deadline: April 24, 2026 (districts serving 50,000+) or April 26, 2027 (districts serving under 50,000). Use your 2020 decennial Census population, or 2022 SAIPE data for independent school districts.</li>
-            <li>Audit all student-facing AI and edtech tools against WCAG 2.1 Level AA. Automated scans catch only 30% of issues; manual testing with a screen reader (NVDA or JAWS) is required</li>
+            <li>Audit your district's own websites, portals, and digital content against WCAG 2.1 Level AA for Title II compliance. For vendor-provided edtech tools, request VPAT documentation and test for Section 504 equal access obligations. Automated scans catch only 30% of issues; manual testing with a screen reader (NVDA or JAWS) is required</li>
             <li>Request VPAT (Voluntary Product Accessibility Template) from every vendor; document receipt and review</li>
             <li>Embed WCAG 2.1 Level AA compliance language into all new vendor contracts and procurement RFPs</li>
             <li>Document alternative access paths for students whose IEP or 504 plan requires accommodation</li>
           </ul>
         </div>
-        <div class="entry-tlf-link">
-          <strong>TLF resource:</strong> The <a href="https://www.languagefirm.org/toolvault#districtfiling" target="_blank">District Filing</a> "School Fit Snapshot" section includes admin controls availability, a proxy for accessibility configuration. Tools rated Conditional or No-Go often fail this review.
-        </div>
         <div class="entry-source">
-          <strong>Basis:</strong> ADA Title II final rule (DOJ, published April 24, 2024; 28 CFR Part 35) · WCAG 2.1 Level AA (W3C, 2018) · Section 504 of the Rehabilitation Act (29 U.S.C. §794) · OCR enforcement authority over K-12 digital accessibility
+          <strong>Basis:</strong> ADA Title II final rule (DOJ, published April 24, 2024; 28 CFR Part 35) — governs district websites, apps, and digital content · Section 504 of the Rehabilitation Act (29 U.S.C. §794) — governs equal access to instruction for students with disabilities · WCAG 2.1 Level AA (W3C, 2018) · OCR enforcement authority over K-12 digital accessibility
         </div>
       </div>
     </div>
  
     <!-- ═══════════════════════ Q4 ═══════════════════════ -->
     <div class="cal-section-label">Q4 — October through December</div>
+ 
+    <div class="cal-entry window" data-q="q4" data-type="window">
+      <div class="entry-inner">
+        <div class="entry-top">
+          <div class="entry-badge">Decision Window</div>
+          <div class="entry-title-block">
+            <div class="entry-title">Vendor Viability Review: End-of-Year Tool Status Check</div>
+            <div class="entry-date">November 1 – December 19, 2026 · Complete before contract renewal signing</div>
+          </div>
+        </div>
+        <p class="entry-body">The edtech vendor collapse pattern is not hypothetical. The PowerSchool breach and reported instability among several AI tutoring platforms in 2024 and 2025 have demonstrated that tools districts depend on can fail, get acquired, or become security liabilities mid-year. End-of-year is when to assess whether each AI tool in your inventory should be renewed, requires a replacement DPA due to acquisition, or should be sunset before next year. What a reviewer asks: Did you know your vendor was in financial distress? When did you find out, and what did you do?</p>
+        <div class="entry-ready">
+          <div class="entry-ready-label">What to assess for each vendor before contract renewal</div>
+          <ul>
+            <li>Confirm vendor is still independently operational. Check for acquisition announcements.</li>
+            <li>Review any data breach or security incident disclosed by the vendor this year</li>
+            <li>Confirm DPA terms still reflect current data practices. Acquisitions often change data sharing.</li>
+            <li>Review recent industry reporting and vendor communications for security incidents or ownership changes</li>
+            <li>Document the renewal decision: date, rationale, and who approved it</li>
+          </ul>
+        </div>
+        <div class="entry-source">
+          <strong>Basis:</strong> FERPA 34 CFR §99.31(a)(1), school official exception requires current, valid agreement · Student Data Privacy Consortium NDPA standard, vendor notification requirements on change of control · PowerSchool breach disclosure (PowerSchool, January 2025)
+        </div>
+      </div>
+    </div>
  
     <div class="cal-entry action" data-q="q4" data-type="action">
       <div class="entry-inner">
@@ -496,82 +480,19 @@
             <li>Evidence of a documented governance process: the artifact a reviewer accepts as proof of due diligence</li>
           </ul>
         </div>
-        <div class="entry-tlf-link">
-          <strong>TLF resource:</strong> The <a href="https://www.languagefirm.org/ai-data-governance#thecheckup" target="_blank">Annual AI Governance Checkup</a> is a fixed-scope engagement: intake form, scored assessment, findings memo. Designed to be completed in one cycle without a months-long consulting engagement.
-        </div>
         <div class="entry-source">
-          <strong>Basis:</strong> FERPA data governance requirements · CoSN K-12 Privacy Framework · TLF Governance Checkup Scoring System (internal rubric, available on request)
+          <strong>Basis:</strong> FERPA data governance requirements · CoSN K-12 Privacy Framework
         </div>
       </div>
     </div>
  
-    <div class="cal-entry window" data-q="q4" data-type="window">
-      <div class="entry-inner">
-        <div class="entry-top">
-          <div class="entry-badge">Decision Window</div>
-          <div class="entry-title-block">
-            <div class="entry-title">Vendor Viability Review: End-of-Year Tool Status Check</div>
-            <div class="entry-date">November 1 – December 19, 2026 · Complete before contract renewal signing</div>
-          </div>
-        </div>
-        <p class="entry-body">The edtech vendor collapse pattern is not hypothetical. The PowerSchool breach, the Scholastic Book Fairs data exposure, and the shutdown of multiple AI tutoring platforms in 2024 and 2025 have demonstrated that tools districts depend on can fail, get acquired, or become security liabilities mid-year. End-of-year is when to assess whether each AI tool in your inventory should be renewed, requires a replacement DPA due to acquisition, or should be sunset before next year. What a reviewer asks: Did you know your vendor was in financial distress? When did you find out, and what did you do?</p>
-        <div class="entry-ready">
-          <div class="entry-ready-label">What to assess for each vendor before contract renewal</div>
-          <ul>
-            <li>Confirm vendor is still independently operational. Check for acquisition announcements.</li>
-            <li>Review any data breach or security incident disclosed by the vendor this year</li>
-            <li>Confirm DPA terms still reflect current data practices. Acquisitions often change data sharing.</li>
-            <li>Check Incident Bulletin archive for any flags on this vendor since your last review</li>
-            <li>Document the renewal decision: date, rationale, and who approved it</li>
-          </ul>
-        </div>
-        <div class="entry-tlf-link">
-          <strong>TLF resource:</strong> The <a href="https://www.languagefirm.org/toolvault#bulletin" target="_blank">Weekly Incident Bulletin</a> tracks vendor incidents in real time. The <a href="https://www.languagefirm.org/toolvault#districtfiling" target="_blank">District Filing</a> maintains vetting status and vendor viability flags for tools covered in recent issues. Cross-reference your contract renewal list against both before signing.
-        </div>
-        <div class="entry-source">
-          <strong>Basis:</strong> FERPA 34 CFR §99.31(a)(1), school official exception requires current, valid agreement · Student Data Privacy Consortium NDPA standard, vendor notification requirements on change of control · PowerSchool breach documentation (ED/OCR, 2025)
-        </div>
-      </div>
-    </div>
- 
-    <div class="cal-entry hard" data-q="q4" data-type="hard">
-      <div class="entry-inner">
-        <div class="entry-top">
-          <div class="entry-badge">Hard Deadline</div>
-          <div class="entry-title-block">
-            <div class="entry-title">California AB 1584 Compliance: Third-Party Contract Annual Audit</div>
-            <div class="entry-date">Ongoing, triggered by each new third-party contract · December review recommended for California LEAs</div>
-          </div>
-        </div>
-        <p class="entry-body">California Education Code §49073.1 (AB 1584) requires that any contract between a local educational agency and a third party for digital storage of pupil records or digital educational software include specific provisions covering data ownership, use restrictions, security, deletion, and breach notification. This applies to AI tools and edtech platforms that access, store, or use pupil records under contract with the district. It is not an annual filing. These are contract requirements that must be in place before a third party accesses student data. December is a practical time to audit every active third-party contract against the law's required provisions.</p>
-        <div class="entry-ready">
-          <div class="entry-ready-label">What AB 1584 (Ed. Code §49073.1) requires in every third-party contract</div>
-          <ul>
-            <li>Statement that pupil records remain the property of and under the control of the LEA, not the vendor</li>
-            <li>Prohibition on use of pupil record information for any purpose not required or permitted by the contract</li>
-            <li>Prohibition on use of personally identifiable information in pupil records for targeted advertising</li>
-            <li>Certification that pupil records will not be retained by the vendor after the contract ends</li>
-            <li>Description of security procedures the vendor will maintain to protect pupil records</li>
-            <li>Description of procedures for notifying the district of any unauthorized disclosure of pupil records</li>
-            <li>Description of how the LEA and vendor will jointly ensure FERPA compliance</li>
-          </ul>
-        </div>
-        <div class="entry-tlf-link">
-          <strong>TLF resource:</strong> The <a href="https://www.languagefirm.org/toolvault#districtfiling" target="_blank">District Filing</a> "DPA/contract path available?" field flags whether a vendor has an accessible AB 1584-compliant agreement. Tools marked "Unclear" on this field require legal review before California deployment.
-        </div>
-        <div class="entry-source">
-          <strong>Source:</strong>
-          <a href="https://leginfo.legislature.ca.gov/faces/billTextClient.xhtml?bill_id=201320140AB1584" target="_blank">California AB 1584 (chaptered text), California Ed. Code §49073.1</a>
-          · California-specific; applies to all third parties under contract with California LEAs for digital storage or educational software. Verify current requirements with district legal counsel annually
-        </div>
-      </div>
-    </div>
+    
  
   </div><!-- /cal-entries -->
  
   <div class="cal-statbar">
     <div class="cal-stat">
-      <div class="cal-stat-val">5 verified</div>
+      <div class="cal-stat-val">4 verified</div>
       <div class="cal-stat-lbl">Hard deadlines with confirmed primary source citations</div>
     </div>
     <div class="cal-stat">
@@ -582,14 +503,10 @@
       <div class="cal-stat-val">3 windows</div>
       <div class="cal-stat-lbl">Decision windows: act before they close or the gap opens</div>
     </div>
-    <div class="cal-stat">
-      <div class="cal-stat-val">TLF linked</div>
-      <div class="cal-stat-lbl">Every entry connects to a Tool Vault, Bulletin, or Checkup resource</div>
-    </div>
   </div>
  
   <div class="cal-footer-note">
-    <strong>About this calendar's accuracy standards.</strong> Every entry is labeled by type: verified hard deadline, recommended internal action, or decision window. Hard deadlines cite primary statutory or regulatory sources. Recommended windows are labeled honestly. They represent best-practice timing based on when compliance gaps typically surface, not regulatory requirements. California-specific entries are noted as such. Dates reflect the 2025–2026 academic year. This calendar does not constitute legal advice. Verify all requirements with district legal counsel and your state education agency.
+    <strong>About this calendar's accuracy standards.</strong> Every entry is labeled by type: verified hard deadline, recommended internal action, or decision window. Hard deadlines cite primary statutory or regulatory sources. Recommended windows are labeled honestly — they represent best-practice timing based on when compliance gaps typically surface, not regulatory requirements. Dates reflect the 2025–2026 academic year. This calendar does not constitute legal advice. Verify all requirements with district legal counsel and your state education agency. Version: Spring 2026. Further compliance resources and professional guidance are available at <a href="https://languagefirm.org" target="_blank">languagefirm.org</a>.
   </div>
  
 </div><!-- /cal-wrap -->
@@ -638,4 +555,3 @@
 </script>
 </body>
 </html>
- 
