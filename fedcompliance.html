@@ -20,34 +20,24 @@
     --bg:       #F2F4F6;
     --white:    #FFFFFF;
   }
- 
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body { background: var(--bg); font-family: 'DM Sans', sans-serif; color: var(--body); line-height: 1.6; }
- 
-  /* MARQUEE */
   .cal-band { background: var(--dark); padding: 13px 40px; overflow: hidden; white-space: nowrap; }
   .cal-band-inner { display: inline-block; animation: calMarquee 30s linear infinite; }
   @keyframes calMarquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
   .cal-band-inner span { font-size: 10px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: rgba(255,255,255,0.35); padding: 0 32px; }
   .cal-band-inner span.hi { color: rgba(255,255,255,0.85); }
- 
-  /* WRAPPER */
   .cal-wrap { max-width: 960px; margin: 0 auto; padding: 48px 24px 64px; }
- 
-  /* HEADER */
+  .cal-version { display: inline-block; font-size: 10px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; background: var(--amber-bg); color: var(--amber); border: 1px solid #E8C090; border-radius: 3px; padding: 4px 10px; margin-bottom: 20px; }
   .cal-header { margin-bottom: 32px; animation: fadeUp 0.5s ease both 0.05s; }
   .cal-eyebrow { font-size: 10px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--accent); display: flex; align-items: center; gap: 10px; margin-bottom: 14px; }
   .cal-eyebrow::before { content: ''; display: inline-block; width: 22px; height: 2px; background: var(--accent); }
   .cal-title { font-family: 'Fraunces', serif; font-size: clamp(28px, 4vw, 42px); font-weight: 700; color: var(--dark); line-height: 1.15; margin-bottom: 12px; }
   .cal-title em { font-style: italic; font-weight: 300; color: var(--accent); }
   .cal-desc { font-size: 14.5px; color: var(--gray); max-width: 620px; line-height: 1.7; margin-bottom: 18px; }
- 
-  /* SCOPE BANNER */
   .cal-scope-banner { display: flex; align-items: flex-start; gap: 14px; background: var(--dark); color: rgba(255,255,255,0.85); border-radius: 5px; padding: 16px 20px; font-size: 13px; line-height: 1.65; margin-bottom: 28px; }
   .cal-scope-banner strong { color: var(--white); }
   .cal-scope-banner .scope-icon { font-size: 20px; flex-shrink: 0; margin-top: 1px; }
- 
-  /* LEGEND */
   .cal-legend { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 28px; animation: fadeUp 0.5s ease both 0.15s; }
   .leg-item { display: flex; align-items: center; gap: 8px; font-size: 12.5px; font-weight: 700; letter-spacing: 0.3px; padding: 8px 16px; border-radius: 4px; cursor: pointer; transition: opacity 0.2s, box-shadow 0.2s; user-select: none; border: 2px solid transparent; }
   .leg-item.active { opacity: 1; box-shadow: 0 2px 8px rgba(0,0,0,0.12); }
@@ -63,17 +53,11 @@
   .leg-dot.action { background: #A05010; }
   .leg-dot.state  { background: #1050A0; }
   .leg-dot.all    { background: var(--white); }
- 
-  /* QUARTER PILLS */
   .cal-quarters { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 36px; animation: fadeUp 0.5s ease both 0.2s; }
   .q-pill { font-size: 12px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; padding: 8px 18px; border-radius: 3px; border: 2px solid var(--gray-lt); cursor: pointer; transition: all 0.2s; background: var(--white); color: var(--gray); }
   .q-pill.active { background: var(--dark); color: var(--white); border-color: var(--dark); }
   .q-pill:hover:not(.active) { border-color: var(--accent); color: var(--accent); }
- 
-  /* SECTION LABELS */
   .cal-section-label { font-size: 10px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--gray); padding: 6px 0; border-bottom: 1px solid var(--gray-lt); margin-bottom: 16px; margin-top: 8px; }
- 
-  /* ENTRIES */
   .cal-entries { display: flex; flex-direction: column; gap: 16px; }
   .cal-entry { background: var(--white); border-radius: 6px; overflow: hidden; box-shadow: 0 1px 6px rgba(27,58,75,0.07); transition: box-shadow 0.2s, transform 0.2s; animation: fadeUp 0.4s ease both; }
   .cal-entry:hover { box-shadow: 0 4px 20px rgba(27,58,75,0.12); transform: translateY(-1px); }
@@ -81,7 +65,6 @@
   .cal-entry.action { border-left: 5px solid var(--amber); }
   .cal-entry.state  { border-left: 5px solid var(--accent); }
   .cal-entry.hidden { display: none; }
- 
   .entry-inner { padding: 22px 26px; }
   .entry-top { display: flex; align-items: flex-start; gap: 14px; margin-bottom: 14px; flex-wrap: wrap; }
   .entry-badge { font-size: 10px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; padding: 4px 10px; border-radius: 2px; flex-shrink: 0; margin-top: 2px; }
@@ -94,37 +77,27 @@
   .hard   .entry-date { color: var(--red); }
   .action .entry-date { color: var(--amber); }
   .state  .entry-date { color: var(--accent); }
- 
   .entry-body { font-size: 13.5px; line-height: 1.65; color: #555; margin-bottom: 14px; }
- 
   .entry-state-note { font-size: 12.5px; color: var(--accent); background: var(--blue-bg); border-radius: 3px; padding: 10px 14px; margin-bottom: 14px; line-height: 1.55; }
   .entry-state-note strong { color: var(--dark); }
- 
   .entry-ready { background: var(--gray-lt); border-radius: 4px; padding: 14px 16px; margin-bottom: 12px; }
   .entry-ready-label { font-size: 10px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--dark); margin-bottom: 8px; }
   .entry-ready ul { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 5px; }
   .entry-ready ul li { font-size: 13px; color: var(--body); padding-left: 18px; position: relative; }
-  .entry-ready ul li::before { content: '→'; position: absolute; left: 0; color: var(--accent); font-size: 11px; top: 1px; }
- 
+  .entry-ready ul li::before { content: '\2192'; position: absolute; left: 0; color: var(--accent); font-size: 11px; top: 1px; }
   .entry-source { font-size: 11.5px; color: var(--gray); display: flex; align-items: flex-start; gap: 5px; flex-wrap: wrap; line-height: 1.5; }
   .entry-source strong { color: var(--dark); font-weight: 700; }
   .entry-source a { color: var(--accent); text-decoration: none; font-weight: 500; }
   .entry-source a:hover { text-decoration: underline; }
- 
-  /* STAT BAR */
   .cal-statbar { display: flex; background: var(--dark); border-radius: 6px; overflow: hidden; margin-top: 40px; animation: fadeUp 0.5s ease both 0.3s; }
   .cal-stat { flex: 1; padding: 22px 28px; border-right: 1px solid rgba(255,255,255,0.1); }
   .cal-stat:last-child { border-right: none; }
   .cal-stat-val { font-family: 'Fraunces', serif; font-size: 22px; font-weight: 700; color: var(--white); margin-bottom: 4px; }
   .cal-stat-lbl { font-size: 12px; color: rgba(255,255,255,0.5); line-height: 1.4; }
- 
-  /* FOOTER NOTE */
   .cal-footer-note { margin-top: 32px; padding: 20px 24px; background: var(--white); border-radius: 6px; border-left: 4px solid var(--amber); font-size: 13px; color: var(--gray); line-height: 1.65; animation: fadeUp 0.5s ease both 0.35s; }
   .cal-footer-note strong { color: var(--dark); }
   .cal-footer-note a { color: var(--accent); text-decoration: none; font-weight: 500; }
- 
   @keyframes fadeUp { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
- 
   @media (max-width: 600px) {
     .cal-wrap { padding: 32px 16px 48px; }
     .cal-statbar { flex-direction: column; }
@@ -138,22 +111,22 @@
  
 <div class="cal-band">
   <div class="cal-band-inner">
-    <span>Federal Compliance</span><span>〰</span><span class="hi">K-12 Intelligence</span><span>〰</span><span>Title I · II · III · IV-A</span><span>〰</span><span class="hi">FERPA · IDEA · McKinney-Vento</span><span>〰</span><span>The Language Firm</span><span>〰</span>
-    <span>Federal Compliance</span><span>〰</span><span class="hi">K-12 Intelligence</span><span>〰</span><span>Title I · II · III · IV-A</span><span>〰</span><span class="hi">FERPA · IDEA · McKinney-Vento</span><span>〰</span><span>The Language Firm</span><span>〰</span>
+    <span>Federal Compliance</span><span>&#12336;</span><span class="hi">K-12 Intelligence</span><span>&#12336;</span><span>Title I &middot; II &middot; III &middot; IV-A</span><span>&#12336;</span><span class="hi">FERPA &middot; IDEA &middot; McKinney-Vento</span><span>&#12336;</span><span>The Language Firm</span><span>&#12336;</span>
+    <span>Federal Compliance</span><span>&#12336;</span><span class="hi">K-12 Intelligence</span><span>&#12336;</span><span>Title I &middot; II &middot; III &middot; IV-A</span><span>&#12336;</span><span class="hi">FERPA &middot; IDEA &middot; McKinney-Vento</span><span>&#12336;</span><span>The Language Firm</span><span>&#12336;</span>
   </div>
 </div>
  
 <div class="cal-wrap">
  
   <div class="cal-header">
+    <div class="cal-version">Version: Spring 2026 &mdash; Audited March 22, 2026</div>
     <div class="cal-eyebrow">The Language Firm: K-12 Compliance Intelligence</div>
     <h1 class="cal-title">Federal Compliance<br><em>Calendar</em></h1>
-    <p class="cal-desc">Verified federal obligations, recommended internal actions, and "check your state" windows, each labeled honestly. No invented dates. Every entry cites its primary federal source.</p>
- 
+    <p class="cal-desc">Verified federal obligations, recommended internal actions, and &ldquo;check your state&rdquo; windows, each labeled honestly. No invented dates. Every entry cites its primary federal source.</p>
     <div class="cal-scope-banner">
-      <span class="scope-icon">🇺🇸</span>
+      <span class="scope-icon">&#127482;&#127480;</span>
       <div>
-        <strong>Federal law only. Applies to all 50 states.</strong> Every entry on this calendar is grounded in federal statute or regulation. "Hard deadline" entries reflect federal fiscal year dates and standing federal obligations. "Check your state" entries identify where your SEA sets the specific window. The federal hook is real and national, and the submission date varies by state. Your state education agency is always the authoritative source for exact local deadlines.
+        <strong>Federal law only. Applies to all 50 states.</strong> Every entry on this calendar is grounded in federal statute or regulation. &ldquo;Hard deadline&rdquo; entries reflect federal fiscal year dates and standing federal obligations. &ldquo;Check your state&rdquo; entries identify where your SEA sets the specific window. The federal hook is real and national, and the submission date varies by state. Your state education agency is always the authoritative source for exact local deadlines.
       </div>
     </div>
   </div>
@@ -167,18 +140,16 @@
  
   <div class="cal-quarters">
     <div class="q-pill active" data-q="all" onclick="filterQ('all')">All quarters</div>
-    <div class="q-pill" data-q="q1" onclick="filterQ('q1')">Q1 · Jan–Mar</div>
-    <div class="q-pill" data-q="q2" onclick="filterQ('q2')">Q2 · Apr–Jun</div>
-    <div class="q-pill" data-q="q3" onclick="filterQ('q3')">Q3 · Jul–Sep</div>
-    <div class="q-pill" data-q="q4" onclick="filterQ('q4')">Q4 · Oct–Dec</div>
+    <div class="q-pill" data-q="q1" onclick="filterQ('q1')">Q1 &middot; Jan&ndash;Mar</div>
+    <div class="q-pill" data-q="q2" onclick="filterQ('q2')">Q2 &middot; Apr&ndash;Jun</div>
+    <div class="q-pill" data-q="q3" onclick="filterQ('q3')">Q3 &middot; Jul&ndash;Sep</div>
+    <div class="q-pill" data-q="q4" onclick="filterQ('q4')">Q4 &middot; Oct&ndash;Dec</div>
   </div>
  
   <div class="cal-entries" id="entries">
  
-    <!-- ══ Q1 ══ -->
     <div class="cal-section-label">Q1: January through March</div>
  
-    <!-- Title I Expenditure Pace -->
     <div class="cal-entry action" data-q="q1" data-type="action">
       <div class="entry-inner">
         <div class="entry-top">
@@ -188,7 +159,7 @@
             <div class="entry-date">Recommended: February through March. Not a federal filing date.</div>
           </div>
         </div>
-        <p class="entry-body">ESSA §1127(a) limits Title I Part A carryover to 15% of a district's annual allocation. The carryover calculation is made at the close of the federal fiscal year (September 30), not at the end of the school year. Note: the 15% limitation does not apply if the LEA's total allocation is less than $50,000 for the fiscal year (ESSA §1127(a)). A pace problem identified in February can still be corrected. One identified in August usually cannot. This is a recommended internal review, not a federal filing requirement.</p>
+        <p class="entry-body">ESSA &sect;1127(a) limits Title I Part A carryover to 15% of a district&rsquo;s annual allocation. The carryover calculation is made at the close of the federal fiscal year (September 30), not at the end of the school year. Note: the 15% limitation does not apply if the LEA&rsquo;s total allocation (including any transferred funds) is less than $50,000 for the fiscal year (ESSA &sect;1127(a)). A pace problem identified in February can still be corrected. One identified in August usually cannot. This is a recommended internal review, not a federal filing requirement.</p>
         <div class="entry-ready">
           <div class="entry-ready-label">What to review internally</div>
           <ul>
@@ -199,14 +170,13 @@
           </ul>
         </div>
         <div class="entry-source">
-          <strong>Source:</strong> ESSA §1127(a) ·
+          <strong>Source:</strong> ESSA &sect;1127(a) &middot;
           <a href="https://www.ed.gov/laws-and-policy/laws-preschool-grade-12-education/every-student-succeeds-act" target="_blank">ESSA full text, ed.gov</a>
-          · Hard federal date is September 30 FY close. This entry is a mid-year precaution.
+          &middot; Hard federal date is September 30 FY close. This entry is a mid-year precaution.
         </div>
       </div>
     </div>
  
-    <!-- ESSA Consolidated State Plan check -->
     <div class="cal-entry action" data-q="q1" data-type="action">
       <div class="entry-inner">
         <div class="entry-top">
@@ -216,11 +186,11 @@
             <div class="entry-date">Recommended: January through February. No federal filing date for districts.</div>
           </div>
         </div>
-        <p class="entry-body">Each state submits a Consolidated State Plan to ED under ESSA that governs how Title I, II, III, and IV-A funds flow to districts. Districts are bound by their state's approved plan, but most district administrators have never read it. Q1 is a practical time to verify that local program descriptions and use-of-funds plans remain consistent with what the state certified to ED. Misalignment discovered during a monitoring visit, rather than by the district, is a compliance finding.</p>
+        <p class="entry-body">Each state submits a Consolidated State Plan to ED under ESSA that governs how Title I, II, III, and IV-A funds flow to districts. Districts are bound by their state&rsquo;s approved plan, but most district administrators have never read it. Q1 is a practical time to verify that local program descriptions and use-of-funds plans remain consistent with what the state certified to ED. Misalignment discovered during a monitoring visit, rather than by the district, is a compliance finding.</p>
         <div class="entry-ready">
           <div class="entry-ready-label">What to review internally</div>
           <ul>
-            <li>Locate your state's current ESSA Consolidated State Plan (available on your SEA's website)</li>
+            <li>Locate your state&rsquo;s current ESSA Consolidated State Plan (available on your SEA&rsquo;s website)</li>
             <li>Review Title I supplement-not-supplant documentation against your local budget</li>
             <li>Confirm that funded Title II professional development activities match plan descriptions</li>
             <li>Check Title IV-A well-rounded education spending meets the 20% threshold requirement</li>
@@ -228,26 +198,24 @@
         </div>
         <div class="entry-source">
           <strong>Source:</strong>
-          <a href="https://www.ed.gov/laws-and-policy/laws-preschool-grade-12-education/every-student-succeeds-act" target="_blank">ESSA, ed.gov/oese</a>
-          · State plans publicly available at ed.gov/essa
+          <a href="https://www.ed.gov/laws-and-policy/laws-preschool-grade-12-education/every-student-succeeds-act" target="_blank">ESSA, ed.gov</a>
+          &middot; State plans publicly available through your SEA&rsquo;s website
         </div>
       </div>
     </div>
  
-    <!-- ══ Q2 ══ -->
     <div class="cal-section-label">Q2: April through June</div>
  
-    <!-- FERPA/PPRA compliance certification -->
     <div class="cal-entry hard" data-q="q2" data-type="hard">
       <div class="entry-inner">
         <div class="entry-top">
           <div class="entry-badge">Hard Deadline</div>
           <div class="entry-title-block">
             <div class="entry-title">FERPA &amp; PPRA Compliance Certification</div>
-            <div class="entry-date">April 30, per ED Student Privacy Policy Office (SPPO) requirement</div>
+            <div class="entry-date">April 30 deadline established for 2025. Confirm with your SEA each spring whether a new request has been issued.</div>
           </div>
         </div>
-        <p class="entry-body">On March 28, 2025, ED's Student Privacy Policy Office issued a Dear Colleague Letter alongside its annual FERPA/PPRA notification (required by 20 U.S.C. §1232h(c)(5)(C)), requiring each SEA to submit documentation by April 30, 2025 confirming that the SEA and its LEAs are complying with FERPA and PPRA. The April 30 date was tied to a specific 2025 enforcement cycle focused on parental rights and student records. ED has not confirmed this as a recurring annual deadline. Confirm with your SEA each spring whether a new compliance documentation request has been issued and what district-level response is required.</p>
+        <p class="entry-body">On March 28, 2025, ED&rsquo;s Student Privacy Policy Office issued a Dear Colleague Letter alongside its annual FERPA/PPRA notification (required by 20 U.S.C. &sect;1232h(c)(5)(C)), requiring each SEA to submit documentation by April 30, 2025 confirming that the SEA and its LEAs are complying with FERPA and PPRA. As of the Spring 2026 audit of this calendar (March 22, 2026), no equivalent Dear Colleague Letter or April 30 deadline has been issued for 2026. The underlying FERPA and PPRA compliance obligations are standing and year-round regardless of whether a new documentation request is issued. Confirm with your SEA each spring whether a new request has been issued and what district-level response is required.</p>
         <div class="entry-ready">
           <div class="entry-ready-label">What to have ready</div>
           <ul>
@@ -255,20 +223,19 @@
             <li>Directory information policy current and board-approved</li>
             <li>Records access request procedure documented and accessible to staff</li>
             <li>PPRA survey notification procedures in place for any third-party surveys</li>
-            <li>Any "gender plan" or similar student-specific documentation reviewed for parental access compliance</li>
-            <li>Confirm with your SEA what district-level documentation they require for certification</li>
+            <li>Any &ldquo;gender plan&rdquo; or similar student-specific documentation reviewed for parental access compliance</li>
+            <li>Confirm with your SEA what district-level documentation they require this spring</li>
           </ul>
         </div>
         <div class="entry-source">
           <strong>Source:</strong>
           <a href="https://studentprivacy.ed.gov/" target="_blank">ED Student Privacy Policy Office, studentprivacy.ed.gov</a>
-          · FERPA: 20 U.S.C. §1232g; 34 CFR Part 99 · PPRA: 20 U.S.C. §1232h
-          · Dear Colleague Letter issued March 28, 2025. April 30 was a 2025-specific date; confirm with your SEA whether a new request has been issued each spring.
+          &middot; FERPA: 20 U.S.C. &sect;1232g; 34 CFR Part 99 &middot; PPRA: 20 U.S.C. &sect;1232h
+          &middot; Dear Colleague Letter issued March 28, 2025. April 30 was a 2025-specific date. No equivalent 2026 letter confirmed as of March 22, 2026.
         </div>
       </div>
     </div>
  
-    <!-- FERPA annual notification -->
     <div class="cal-entry action" data-q="q2" data-type="action">
       <div class="entry-inner">
         <div class="entry-top">
@@ -278,12 +245,12 @@
             <div class="entry-date">Recommended: May through June. No single federal filing date.</div>
           </div>
         </div>
-        <p class="entry-body">34 CFR §99.7 requires LEAs to notify parents and eligible students of their FERPA rights annually. There is no prescribed federal date. The notification must be provided by any means reasonably likely to inform families, and must include provisions for families with disabilities or whose primary language is not English. End-of-year review ensures the notification is accurate and the distribution is documented before the new school year begins.</p>
+        <p class="entry-body">34 CFR &sect;99.7 requires LEAs to notify parents and eligible students of their FERPA rights annually. There is no prescribed federal date. The notification must be provided by any means reasonably likely to inform families, and must include provisions for families with disabilities or whose primary language is not English. End-of-year review ensures the notification is accurate and the distribution is documented before the new school year begins.</p>
         <div class="entry-ready">
           <div class="entry-ready-label">What to review and document</div>
           <ul>
             <li>Is the notification content current? (rights to inspect, amend, consent to disclosure, file complaint)</li>
-            <li>Does it include the district's definition of "school official" and "legitimate educational interest"?</li>
+            <li>Does it include the district&rsquo;s definition of &ldquo;school official&rdquo; and &ldquo;legitimate educational interest&rdquo;?</li>
             <li>Distribution method documented: how was it sent, to whom, and when?</li>
             <li>Available in all required home languages for your student population?</li>
             <li>Directory information opt-out process documented and accessible</li>
@@ -292,12 +259,11 @@
         <div class="entry-source">
           <strong>Source:</strong>
           <a href="https://studentprivacy.ed.gov/ferpa" target="_blank">FERPA, studentprivacy.ed.gov</a>
-          · 34 CFR §99.7 · Annual standing obligation; no single federal filing date
+          &middot; 34 CFR &sect;99.7 &middot; Annual standing obligation; no single federal filing date
         </div>
       </div>
     </div>
  
-    <!-- McKinney-Vento data -->
     <div class="cal-entry state" data-q="q2" data-type="state">
       <div class="entry-inner">
         <div class="entry-top">
@@ -308,30 +274,29 @@
           </div>
         </div>
         <div class="entry-state-note">
-          <strong>Why "check your state":</strong> McKinney-Vento data (EDFacts file specs FS 118, FS 170, FS 194) flows from district to SEA to ED via the EDPass system. The SEA sets the district-level data collection window. FS 170 for SY 2024–25, for example, was due to ED by January 2026, but the district-to-SEA window that feeds it is set by each state individually. The federal obligation is national; the submission calendar is not.
+          <strong>Why &ldquo;check your state&rdquo;:</strong> McKinney-Vento data (EDFacts file specs FS 118, FS 170, FS 194) flows from district to SEA to ED via the EDPass system. The SEA sets the district-level data collection window. FS 170 for SY 2024&ndash;25, for example, was due to ED by January 2026, but the district-to-SEA window that feeds it is set by each state individually. The federal obligation is national; the submission calendar is not.
         </div>
-        <p class="entry-body">The McKinney-Vento Homeless Assistance Act (Title VII-B, 42 U.S.C. §11431–11435) requires annual data collection on homeless student identification, enrollment, transportation, and services. What a federal or state reviewer asks is whether every identified student has a complete record: dates of identification, services offered, barriers removed, and school-of-origin decisions documented. That question is constant regardless of when your state's window opens.</p>
+        <p class="entry-body">The McKinney-Vento Homeless Assistance Act (Title VII-B, 42 U.S.C. &sect;11431&ndash;11435) requires annual data collection on homeless student identification, enrollment, transportation, and services. What a federal or state reviewer asks is whether every identified student has a complete record: dates of identification, services offered, barriers removed, and school-of-origin decisions documented. That question is constant regardless of when your state&rsquo;s window opens.</p>
         <div class="entry-ready">
-          <div class="entry-ready-label">What to have ready before your SEA's window opens</div>
+          <div class="entry-ready-label">What to have ready before your SEA&rsquo;s window opens</div>
           <ul>
             <li>Identification logs: date identified, by whom, definition of homelessness applied</li>
             <li>Enrollment records: immediate enrollment documented, any barriers and how they were removed</li>
             <li>Transportation records for each student exercising school-of-origin rights</li>
             <li>Unaccompanied youth records and FAFSA status notifications (if applicable)</li>
             <li>Services-offered documentation for every identified student this year</li>
-            <li>Liaison annual professional development participation documented (42 U.S.C. §11432(f)(6) &amp; (g)(1)(J)(iv))</li>
+            <li>Liaison annual professional development participation documented (42 U.S.C. &sect;11432(f)(6) &amp; (g)(1)(J)(iv))</li>
           </ul>
         </div>
         <div class="entry-source">
-          <strong>Find your SEA's window:</strong>
+          <strong>Find your SEA&rsquo;s window:</strong>
           <a href="https://nche.ed.gov/" target="_blank">NCHE, nche.ed.gov</a>
-          · Source: McKinney-Vento Act, Title VII-B; EDFacts FS 118, 170, 194
-          · Liaison professional development: 42 U.S.C. §11432(f)(6) &amp; (g)(1)(J)(iv)
+          &middot; Source: McKinney-Vento Act, Title VII-B; EDFacts FS 118, 170, 194
+          &middot; Liaison professional development: 42 U.S.C. &sect;11432(f)(6) &amp; (g)(1)(J)(iv)
         </div>
       </div>
     </div>
  
-    <!-- Title III EL program annual review -->
     <div class="cal-entry action" data-q="q2" data-type="action">
       <div class="entry-inner">
         <div class="entry-top">
@@ -341,38 +306,36 @@
             <div class="entry-date">Recommended: May through June. Federal accountability cycle begins here.</div>
           </div>
         </div>
-        <p class="entry-body">ESSA §3121 requires Title III subgrantees to annually report EL student progress toward English proficiency and academic achievement. SEAs use this data to determine whether districts have met Title III accountability targets. Districts that fail to meet targets for two consecutive years face mandatory improvement plans. Q2 is when to review current-year outcome data, before the SEA's reporting window opens, so that findings don't arrive as surprises during monitoring.</p>
+        <p class="entry-body">ESSA &sect;3121 requires Title III subgrantees to annually report EL student progress toward English proficiency and academic achievement. SEAs use this data to determine whether districts have met Title III accountability targets. Districts that fail to meet targets for two consecutive years face mandatory improvement plans. Q2 is when to review current-year outcome data, before the SEA&rsquo;s reporting window opens, so that findings do not arrive as surprises during monitoring.</p>
         <div class="entry-ready">
           <div class="entry-ready-label">What to review before the SEA reporting window</div>
           <ul>
             <li>EL student progress on English language proficiency assessments (ELPA) year-over-year</li>
             <li>Percentage of ELs reclassified as proficient: is the trend moving in the right direction?</li>
             <li>Title III-funded activity documentation: do records show a clear link between spending and outcomes?</li>
-            <li>Parent notification: were parents of EL students notified within 30 days of placement (ESSA §1112(e)(3)(A))?</li>
+            <li>Parent notification: were parents of EL students notified within 30 days of placement (ESSA &sect;1112(e)(3)(A))?</li>
           </ul>
         </div>
         <div class="entry-source">
           <strong>Source:</strong>
           <a href="https://www.ed.gov/grants-and-programs/formula-grants/formula-grants-special-populations/english-language-acquisition-state-grants-title-iii-part" target="_blank">ED Title III Program, ed.gov</a>
-          · ESSA §3121 (accountability) · ESSA §1112(e)(3)(A) (parent notification)
+          &middot; ESSA &sect;3121 (accountability) &middot; ESSA &sect;1112(e)(3)(A) (parent notification)
         </div>
       </div>
     </div>
  
-    <!-- ══ Q3 ══ -->
     <div class="cal-section-label">Q3: July through September</div>
  
-    <!-- Title I carryover hard date -->
     <div class="cal-entry hard" data-q="q3" data-type="hard">
       <div class="entry-inner">
         <div class="entry-top">
           <div class="entry-badge">Hard Deadline</div>
           <div class="entry-title-block">
             <div class="entry-title">Title I Part A: 15% Carryover Limit</div>
-            <div class="entry-date">September 30, federal fiscal year close (ESSA §1127(a))</div>
+            <div class="entry-date">September 30, federal fiscal year close (ESSA &sect;1127(a))</div>
           </div>
         </div>
-        <p class="entry-body">ESSA §1127(a) prohibits districts from carrying over more than 15% of their Title I Part A allocation from one fiscal year to the next. The calculation is made at the close of the federal fiscal year (September 30). Note: the 15% limitation does not apply if the LEA's total Title I Part A allocation (including any transferred funds) is less than $50,000 for the fiscal year (ESSA §1127(a)). Districts that exceed the 15% limit must document why and request a waiver from their SEA. Repeated carryover can trigger compliance monitoring. The mid-year pace review (see Q1 entry) exists specifically to prevent a problem at this date.</p>
+        <p class="entry-body">ESSA &sect;1127(a) prohibits districts from carrying over more than 15% of their Title I Part A allocation from one fiscal year to the next. The calculation is made at the close of the federal fiscal year (September 30). Note: the 15% limitation does not apply if the LEA&rsquo;s total Title I Part A allocation (including any transferred funds) is less than $50,000 for the fiscal year (ESSA &sect;1127(a)). Districts that exceed the 15% limit must document why and request a waiver from their SEA. Repeated carryover can trigger compliance monitoring. The mid-year pace review (see Q1 entry) exists specifically to prevent a problem at this date.</p>
         <div class="entry-ready">
           <div class="entry-ready-label">What to have documented by September 30</div>
           <ul>
@@ -383,14 +346,13 @@
           </ul>
         </div>
         <div class="entry-source">
-          <strong>Source:</strong> ESSA §1127(a) ·
+          <strong>Source:</strong> ESSA &sect;1127(a) &middot;
           <a href="https://www.ed.gov/about/ed-offices/oese/school-support-and-accountability" target="_blank">ED Title I Program, ed.gov</a>
-          · This is the actual hard date, not a spring deadline
+          &middot; This is the actual hard date, not a spring deadline
         </div>
       </div>
     </div>
  
-    <!-- IDEA Part B -->
     <div class="cal-entry state" data-q="q3" data-type="state">
       <div class="entry-inner">
         <div class="entry-top">
@@ -401,28 +363,27 @@
           </div>
         </div>
         <div class="entry-state-note">
-          <strong>Why "check your state":</strong> IDEA Part B annual performance data flows district → SEA → ED through each state's State Performance Plan and Annual Performance Report (SPP/APR) process. The SEA sets district-level data submission windows; there is no federal date that applies to districts directly. What is federal and uniform is what the data must show.
+          <strong>Why &ldquo;check your state&rdquo;:</strong> IDEA Part B annual performance data flows district &rarr; SEA &rarr; ED through each state&rsquo;s State Performance Plan and Annual Performance Report (SPP/APR) process. The SEA sets district-level data submission windows; there is no federal date that applies to districts directly. What is federal and uniform is what the data must show.
         </div>
-        <p class="entry-body">IDEA Part B (20 U.S.C. §1412) requires annual data collection across 17 compliance and results indicators including IEP timelines, least restrictive environment (LRE) placements, transition services, and disproportionality. A federal reviewer's core questions: Were IEP evaluation timelines met? Are LRE placement decisions documented with individualized rationale? Are transition plans in place for all required students?</p>
+        <p class="entry-body">IDEA Part B (20 U.S.C. &sect;1412) requires annual data collection across 17 compliance and results indicators including IEP timelines, least restrictive environment (LRE) placements, transition services, and disproportionality. A federal reviewer&rsquo;s core questions: Were IEP evaluation timelines met? Are LRE placement decisions documented with individualized rationale? Are transition plans in place for all required students?</p>
         <div class="entry-ready">
           <div class="entry-ready-label">What to have ready</div>
           <ul>
-            <li>IEP evaluation completion rate: initial evaluations completed within 60 days of consent (federal requirement)</li>
+            <li>IEP evaluation completion rate: initial evaluations completed within 60 days of consent (34 CFR &sect;300.301(c)(1))</li>
             <li>LRE placement data: documented rationale for each placement decision. Generic language is a finding.</li>
-            <li>Transition plan documentation: in place for all students no later than the IEP in effect when they turn 16 (federal floor under IDEA 34 CFR §300.320(b)). Many states require earlier — check your state's requirement.</li>
+            <li>Transition plan documentation: in place for all students no later than the IEP in effect when they turn 16 (federal floor, 34 CFR &sect;300.320(b)). Many states require earlier; confirm your state&rsquo;s requirement.</li>
             <li>Disproportionality analysis completed. Significant disproportionality triggers corrective action.</li>
             <li>Prior Written Notice (PWN) on file for all IEP decisions made this year</li>
           </ul>
         </div>
         <div class="entry-source">
-          <strong>Find your SEA's window:</strong>
+          <strong>Find your SEA&rsquo;s window:</strong>
           <a href="https://sites.ed.gov/idea/" target="_blank">IDEA, sites.ed.gov/idea</a>
-          · 20 U.S.C. §1412 · SPP/APR indicators: 34 CFR §300.600–300.602
+          &middot; 20 U.S.C. &sect;1412 &middot; SPP/APR indicators: 34 CFR &sect;300.600&ndash;300.602
         </div>
       </div>
     </div>
  
-    <!-- Title IV-A SSAE spending check -->
     <div class="cal-entry action" data-q="q3" data-type="action">
       <div class="entry-inner">
         <div class="entry-top">
@@ -432,7 +393,7 @@
             <div class="entry-date">Recommended: August through September, before fiscal year close</div>
           </div>
         </div>
-        <p class="entry-body">ESSA §4105(b) requires districts receiving more than $30,000 in Title IV-A (Student Support and Academic Enrichment) funds to spend at least 20% on well-rounded educational opportunities, at least 20% on safe and healthy students activities, and no more than 15% on technology infrastructure. Districts that don't meet these thresholds can face findings during monitoring. September is the last opportunity to verify allocation percentages before fiscal year close.</p>
+        <p class="entry-body">ESSA &sect;4105(b) requires districts receiving more than $30,000 in Title IV-A (Student Support and Academic Enrichment) funds to spend at least 20% on well-rounded educational opportunities, at least 20% on safe and healthy students activities, and no more than 15% on technology infrastructure. Districts that do not meet these thresholds can face findings during monitoring. September is the last opportunity to verify allocation percentages before fiscal year close.</p>
         <div class="entry-ready">
           <div class="entry-ready-label">What to verify before September 30</div>
           <ul>
@@ -443,16 +404,14 @@
           </ul>
         </div>
         <div class="entry-source">
-          <strong>Source:</strong> ESSA §4105(b) ·
+          <strong>Source:</strong> ESSA &sect;4105(b) &middot;
           <a href="https://www.ed.gov/grants-and-programs/formula-grants/school-improvement-grants/student-support-and-academic-enrichment-program-title-iv-part" target="_blank">ED Title IV-A Program, ed.gov</a>
         </div>
       </div>
     </div>
  
-    <!-- ══ Q4 ══ -->
     <div class="cal-section-label">Q4: October through December</div>
  
-    <!-- ESSA Consolidated Application / planning cycle -->
     <div class="cal-entry action" data-q="q4" data-type="action">
       <div class="entry-inner">
         <div class="entry-top">
@@ -462,26 +421,25 @@
             <div class="entry-date">Recommended: October through November. State application windows vary.</div>
           </div>
         </div>
-        <p class="entry-body">Most SEAs open their consolidated application or funding request windows for the next school year in late winter or spring. Districts that begin preparation in Q4 (reviewing current-year program outcomes, documenting needs assessment findings, and updating use-of-funds narratives) submit stronger applications and avoid last-minute compliance gaps. This is a recommended internal action; your SEA's actual application window is the hard deadline to track.</p>
+        <p class="entry-body">Most SEAs open their consolidated application or funding request windows for the next school year in late winter or spring. Districts that begin preparation in Q4 (reviewing current-year program outcomes, documenting needs assessment findings, and updating use-of-funds narratives) submit stronger applications and avoid last-minute compliance gaps. This is a recommended internal action; your SEA&rsquo;s actual application window is the hard deadline to track.</p>
         <div class="entry-ready">
           <div class="entry-ready-label">What to prepare in Q4</div>
           <ul>
             <li>Current-year outcome data for each funded program: what worked, what did not</li>
             <li>Needs assessment documentation updated (required for Title I schoolwide programs)</li>
             <li>Use-of-funds narratives reviewed for supplement-not-supplant compliance</li>
-            <li>Parent and family engagement plan reviewed and updated (Title I §1116)</li>
-            <li>Verify authorized representative designation is current in your SEA's system</li>
+            <li>Parent and family engagement plan reviewed and updated (Title I &sect;1116)</li>
+            <li>Verify authorized representative designation is current in your SEA&rsquo;s system</li>
           </ul>
         </div>
         <div class="entry-source">
           <strong>Source:</strong>
           <a href="https://www.ed.gov/about/ed-offices/oese" target="_blank">ED Office of Elementary and Secondary Education, ed.gov</a>
-          · Check your SEA's website for the exact application window each year
+          &middot; Check your SEA&rsquo;s website for the exact application window each year
         </div>
       </div>
     </div>
  
-    <!-- AI Tool Governance -->
     <div class="cal-entry action" data-q="q4" data-type="action">
       <div class="entry-inner">
         <div class="entry-top">
@@ -491,14 +449,15 @@
             <div class="entry-date">Recommended: October through November. Not a regulatory deadline.</div>
           </div>
         </div>
-        <p class="entry-body">No federal regulation currently requires an annual AI tool governance review. This is a recommended internal practice grounded in existing federal obligations: FERPA's data governance requirements apply to any tool that accesses student records (20 U.S.C. §1232g), COPPA applies to tools used with students under 13, and IDEA's confidentiality requirements apply to tools used in special education contexts. Q4 review ensures documentation is current before a new fiscal year of tool adoption begins.</p>
+        <p class="entry-body">No federal regulation currently requires an annual AI tool governance review. This is a recommended internal practice grounded in existing federal obligations: FERPA&rsquo;s data governance requirements apply to any tool that accesses student records (20 U.S.C. &sect;1232g); COPPA compliance obligations rest with the vendor, not the district, but districts must verify that each vendor&rsquo;s data practices qualify for school-provided parental consent before deploying tools to students under 13; and IDEA&rsquo;s confidentiality requirements apply to tools used in special education contexts (34 CFR &sect;300.610&ndash;300.626). Q4 review ensures documentation is current before a new fiscal year of tool adoption begins.</p>
         <div class="entry-ready">
           <div class="entry-ready-label">What to review annually</div>
           <ul>
             <li>Complete inventory of AI tools in use, both approved and unapproved</li>
             <li>Confirm a signed Data Processing Agreement (DPA) exists for every tool that accesses student data</li>
             <li>Verify governing board approval is documented for each AI tool adoption</li>
-            <li>Confirm vendor is still operational, relevant after recent edtech failures</li>
+            <li>Confirm vendor is still operational and compliant after recent edtech failures</li>
+            <li>For tools used with students under 13: confirm vendor terms of service prohibit commercial data use, behavioral advertising, third-party data sharing, and using student data to train or improve the model; school-provided COPPA consent is not valid if any of these conditions are not met</li>
             <li>Output review policies current for all student-facing generative AI tools</li>
             <li>Incident response plan confirmed to include an AI-specific protocol</li>
           </ul>
@@ -506,13 +465,11 @@
         <div class="entry-source">
           <strong>Federal basis:</strong>
           <a href="https://studentprivacy.ed.gov/" target="_blank">FERPA, studentprivacy.ed.gov</a>
-          · 20 U.S.C. §1232g · COPPA: 15 U.S.C. §6501 · IDEA confidentiality: 34 CFR §300.610–300.626
-          · CoSN Privacy Framework
+          &middot; 20 U.S.C. &sect;1232g &middot; COPPA: 15 U.S.C. &sect;6501 &middot; IDEA confidentiality: 34 CFR &sect;300.610&ndash;300.626
         </div>
       </div>
     </div>
  
-    <!-- Title II professional development check -->
     <div class="cal-entry state" data-q="q4" data-type="state">
       <div class="entry-inner">
         <div class="entry-top">
@@ -523,9 +480,9 @@
           </div>
         </div>
         <div class="entry-state-note">
-          <strong>Why "check your state":</strong> Title II Part A expenditure reporting flows through each state's consolidated reporting system on a schedule the SEA sets. The federal standard for what constitutes an allowable professional development expenditure is uniform; the reporting window and format are not.
+          <strong>Why &ldquo;check your state&rdquo;:</strong> Title II Part A expenditure reporting flows through each state&rsquo;s consolidated reporting system on a schedule the SEA sets. The federal standard for what constitutes an allowable professional development expenditure is uniform; the reporting window and format are not.
         </div>
-        <p class="entry-body">ESSA §2103 requires that Title II Part A funds be used for "high-quality professional development" as defined in §8101(42). Activities must be sustained, intensive, and classroom-focused, not one-day workshops. Reviewers ask whether districts can document that each expenditure meets the ESSA definition and was not used to supplant state or local professional development funding. Q4 is when to audit documentation before year-end reporting.</p>
+        <p class="entry-body">ESSA &sect;2103 requires that Title II Part A funds be used for &ldquo;high-quality professional development&rdquo; as defined in &sect;8101(42). Activities must be sustained, intensive, and classroom-focused, not one-day workshops. Reviewers ask whether districts can document that each expenditure meets the ESSA definition and was not used to supplant state or local professional development funding. Q4 is when to audit documentation before year-end reporting.</p>
         <div class="entry-ready">
           <div class="entry-ready-label">What to have documented</div>
           <ul>
@@ -536,9 +493,9 @@
           </ul>
         </div>
         <div class="entry-source">
-          <strong>Source:</strong> ESSA §2103 · ESSA §8101(42) (definition of high-quality PD) ·
+          <strong>Source:</strong> ESSA &sect;2103 &middot; ESSA &sect;8101(42) (definition of high-quality PD) &middot;
           <a href="https://www.ed.gov/grants-and-programs/formula-grants/school-improvement-grants/supporting-effective-instruction-state-grants-title-ii-part" target="_blank">ED Title II Program, ed.gov</a>
-          · Check your SEA for reporting window
+          &middot; Check your SEA for reporting window
         </div>
       </div>
     </div>
@@ -548,7 +505,7 @@
   <div class="cal-statbar">
     <div class="cal-stat">
       <div class="cal-stat-val">2 verified</div>
-      <div class="cal-stat-lbl">Hard federal deadlines: September 30 FY close and April 30 FERPA/PPRA certification</div>
+      <div class="cal-stat-lbl">Hard federal deadlines: September 30 FY close and April 30 FERPA/PPRA certification (2025 specific; confirm annually with your SEA)</div>
     </div>
     <div class="cal-stat">
       <div class="cal-stat-val">7 internal</div>
@@ -556,25 +513,23 @@
     </div>
     <div class="cal-stat">
       <div class="cal-stat-val">3 state-set</div>
-      <div class="cal-stat-lbl">"Check your state" entries: federal hook documented, SEA sets the window</div>
+      <div class="cal-stat-lbl">&ldquo;Check your state&rdquo; entries: federal hook documented, SEA sets the window</div>
     </div>
   </div>
  
   <div class="cal-footer-note">
-    <strong>About this calendar's accuracy standards.</strong> Every entry is grounded in federal statute or regulation, with no state-specific filing dates, no invented deadlines. "Hard deadline" entries reflect standing federal fiscal year dates or ED-issued certification requirements. "Check your state" entries identify where the federal obligation is real and national but the district-facing submission window is set by each SEA. "Recommended internal action" entries are labeled explicitly as practice, not regulation, with the federal provision that makes the practice consequential. Source citations are included on every entry.
+    <strong>About this calendar&rsquo;s accuracy standards.</strong> Every entry is grounded in federal statute or regulation, with no state-specific filing dates, no invented deadlines. &ldquo;Hard deadline&rdquo; entries reflect standing federal fiscal year dates or ED-issued certification requirements. &ldquo;Check your state&rdquo; entries identify where the federal obligation is real and national but the district-facing submission window is set by each SEA. &ldquo;Recommended internal action&rdquo; entries are labeled explicitly as practice, not regulation, with the federal provision that makes the practice consequential. Source citations are included on every entry. <strong>Version: Spring 2026.</strong> Audited March 22, 2026. All source links verified live. Federal program funding for Title I, IDEA, Title II, Title III, Title IV-A, and McKinney-Vento confirmed intact under the FY 2026 appropriations bill signed February 3, 2026 (P.L. 119-XX), flat-funded at FY 2025 levels. No FERPA/PPRA Dear Colleague Letter or April 30 documentation deadline issued for 2026 as of audit date. Next scheduled review: August 2026.
   </div>
  
 </div><!-- /cal-wrap -->
  
 <script>
   let activeQ = 'all', activeType = 'all';
- 
   function filterQ(q) {
     activeQ = q;
     document.querySelectorAll('.q-pill').forEach(p => p.classList.toggle('active', p.dataset.q === q));
     render();
   }
- 
   function filterType(type) {
     activeType = type;
     document.querySelectorAll('.leg-item').forEach(l => {
@@ -583,7 +538,6 @@
     });
     render();
   }
- 
   function render() {
     let delay = 0;
     document.querySelectorAll('.cal-entry').forEach(entry => {
