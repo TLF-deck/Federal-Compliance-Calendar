@@ -3,40 +3,33 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>K-12 AI & Technology Compliance Calendar — The Language Firm</title>
+<title>Access Program Compliance Calendar: The Language Firm</title>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;0,9..144,700;1,9..144,400&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
   :root {
     --dark:     #1B3A4B;
     --accent:   #1A5FA0;
     --amber:    #A85D1A;
-    --green:    #2E5E4A;
-    --green-bg: #D4EDE4;
     --amber-bg: #F5E0C8;
     --blue-bg:  #D4E6F5;
     --red:      #8B1A2A;
     --red-bg:   #F0D4D8;
-    --purple:   #4A2E7A;
-    --purple-bg:#EDE4F5;
     --gray:     #6B7C8A;
     --gray-lt:  #E8EDF1;
     --body:     #333333;
     --bg:       #F2F4F6;
     --white:    #FFFFFF;
+    --warn:     #7A4500;
+    --warn-bg:  #FDF3E3;
+    --warn-border: #E8A24A;
   }
  
   * { box-sizing: border-box; margin: 0; padding: 0; }
- 
-  body {
-    background: var(--bg);
-    font-family: 'DM Sans', sans-serif;
-    color: var(--body);
-    line-height: 1.6;
-  }
+  body { background: var(--bg); font-family: 'DM Sans', sans-serif; color: var(--body); line-height: 1.6; }
  
   /* MARQUEE */
   .cal-band { background: var(--dark); padding: 13px 40px; overflow: hidden; white-space: nowrap; }
-  .cal-band-inner { display: inline-block; animation: calMarquee 32s linear infinite; }
+  .cal-band-inner { display: inline-block; animation: calMarquee 30s linear infinite; }
   @keyframes calMarquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
   .cal-band-inner span { font-size: 10px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: rgba(255,255,255,0.35); padding: 0 32px; }
   .cal-band-inner span.hi { color: rgba(255,255,255,0.85); }
@@ -45,16 +38,28 @@
   .cal-wrap { max-width: 960px; margin: 0 auto; padding: 48px 24px 64px; }
  
   /* HEADER */
-  .cal-header { margin-bottom: 36px; animation: fadeUp 0.5s ease both 0.05s; }
+  .cal-header { margin-bottom: 32px; animation: fadeUp 0.5s ease both 0.05s; }
   .cal-eyebrow { font-size: 10px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--accent); display: flex; align-items: center; gap: 10px; margin-bottom: 14px; }
   .cal-eyebrow::before { content: ''; display: inline-block; width: 22px; height: 2px; background: var(--accent); }
   .cal-title { font-family: 'Fraunces', serif; font-size: clamp(28px, 4vw, 42px); font-weight: 700; color: var(--dark); line-height: 1.15; margin-bottom: 12px; }
   .cal-title em { font-style: italic; font-weight: 300; color: var(--accent); }
-  .cal-desc { font-size: 14.5px; color: var(--gray); max-width: 680px; line-height: 1.7; }
+  .cal-desc { font-size: 14.5px; color: var(--gray); max-width: 620px; line-height: 1.7; margin-bottom: 18px; }
  
-  /* WHAT THIS IS */
-  .cal-context { background: var(--white); border-left: 4px solid var(--purple); border-radius: 0 6px 6px 0; padding: 18px 20px; margin-bottom: 28px; font-size: 13.5px; color: var(--gray); line-height: 1.65; animation: fadeUp 0.5s ease both 0.1s; }
-  .cal-context strong { color: var(--dark); }
+  /* VERIFIED DATE BAR */
+  .cal-verified-bar { display: flex; align-items: center; gap: 12px; background: var(--gray-lt); border-radius: 4px; padding: 11px 18px; margin-bottom: 14px; font-size: 12px; color: var(--gray); }
+  .cal-verified-bar strong { color: var(--dark); font-weight: 700; }
+  .cal-verified-bar .vb-dot { width: 8px; height: 8px; border-radius: 50%; background: #4CAF50; flex-shrink: 0; }
+ 
+  /* STANDING ADVISORY */
+  .cal-advisory { display: flex; align-items: flex-start; gap: 14px; background: var(--warn-bg); border: 1px solid var(--warn-border); border-left: 5px solid var(--warn-border); border-radius: 5px; padding: 16px 20px; font-size: 13px; line-height: 1.65; margin-bottom: 16px; color: var(--warn); }
+  .cal-advisory strong { color: var(--warn); }
+  .cal-advisory a { color: var(--warn); font-weight: 700; }
+  .cal-advisory .adv-icon { font-size: 18px; flex-shrink: 0; margin-top: 2px; }
+ 
+  /* SCOPE BANNER */
+  .cal-scope-banner { display: flex; align-items: flex-start; gap: 14px; background: var(--dark); color: rgba(255,255,255,0.85); border-radius: 5px; padding: 16px 20px; font-size: 13px; line-height: 1.65; margin-bottom: 28px; }
+  .cal-scope-banner strong { color: var(--white); }
+  .cal-scope-banner .scope-icon { font-size: 20px; flex-shrink: 0; margin-top: 1px; }
  
   /* LEGEND */
   .cal-legend { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 28px; animation: fadeUp 0.5s ease both 0.15s; }
@@ -65,12 +70,12 @@
   .leg-dot { width: 11px; height: 11px; border-radius: 50%; flex-shrink: 0; }
   .leg-item.type-hard    { background: #FADADD; color: #7A0E1E; border-color: #F0B8BE; }
   .leg-item.type-action  { background: #FAE4CC; color: #7A3E0A; border-color: #F0C89A; }
-  .leg-item.type-window  { background: #E8DEFA; color: #3A1A7A; border-color: #C4AEFA; }
+  .leg-item.type-state   { background: #C8DEFA; color: #0D3D78; border-color: #96BDF5; }
   .leg-item.type-all     { background: var(--dark); color: var(--white); border-color: var(--dark); }
   .leg-item.type-all.inactive { background: var(--gray-lt); color: var(--dark); border-color: var(--gray-lt); }
   .leg-dot.hard   { background: #C01030; }
   .leg-dot.action { background: #A05010; }
-  .leg-dot.window { background: #4A2E7A; }
+  .leg-dot.state  { background: #1050A0; }
   .leg-dot.all    { background: var(--white); }
  
   /* QUARTER PILLS */
@@ -86,28 +91,32 @@
   .cal-entries { display: flex; flex-direction: column; gap: 16px; }
   .cal-entry { background: var(--white); border-radius: 6px; overflow: hidden; box-shadow: 0 1px 6px rgba(27,58,75,0.07); transition: box-shadow 0.2s, transform 0.2s; animation: fadeUp 0.4s ease both; }
   .cal-entry:hover { box-shadow: 0 4px 20px rgba(27,58,75,0.12); transform: translateY(-1px); }
-  .cal-entry.hard   { border-left: 5px solid var(--red);    }
-  .cal-entry.action { border-left: 5px solid var(--amber);  }
-  .cal-entry.window { border-left: 5px solid var(--purple); }
+  .cal-entry.hard   { border-left: 5px solid var(--red); }
+  .cal-entry.action { border-left: 5px solid var(--amber); }
+  .cal-entry.state  { border-left: 5px solid var(--accent); }
   .cal-entry.hidden { display: none; }
  
   .entry-inner { padding: 22px 26px; }
   .entry-top { display: flex; align-items: flex-start; gap: 14px; margin-bottom: 14px; flex-wrap: wrap; }
   .entry-badge { font-size: 10px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; padding: 4px 10px; border-radius: 2px; flex-shrink: 0; margin-top: 2px; }
-  .hard   .entry-badge { background: var(--red-bg);    color: var(--red);    }
-  .action .entry-badge { background: var(--amber-bg);  color: var(--amber);  }
-  .window .entry-badge { background: var(--purple-bg); color: var(--purple); }
+  .hard   .entry-badge { background: var(--red-bg);   color: var(--red);    }
+  .action .entry-badge { background: var(--amber-bg); color: var(--amber);  }
+  .state  .entry-badge { background: var(--blue-bg);  color: var(--accent); }
   .entry-title-block { flex: 1; min-width: 200px; }
   .entry-title { font-family: 'Fraunces', serif; font-size: 17px; font-weight: 700; color: var(--dark); line-height: 1.25; margin-bottom: 3px; }
   .entry-date { font-size: 12px; font-weight: 700; letter-spacing: 0.3px; }
-  .hard   .entry-date { color: var(--red);    }
-  .action .entry-date { color: var(--amber);  }
-  .window .entry-date { color: var(--purple); }
+  .hard   .entry-date { color: var(--red); }
+  .action .entry-date { color: var(--amber); }
+  .state  .entry-date { color: var(--accent); }
  
   .entry-body { font-size: 13.5px; line-height: 1.65; color: #555; margin-bottom: 14px; }
  
-  .entry-tlf-note { font-size: 12.5px; color: var(--purple); background: var(--purple-bg); border-radius: 3px; padding: 10px 14px; margin-bottom: 14px; line-height: 1.55; }
-  .entry-tlf-note strong { color: var(--dark); }
+  .entry-state-note { font-size: 12.5px; color: var(--accent); background: var(--blue-bg); border-radius: 3px; padding: 10px 14px; margin-bottom: 14px; line-height: 1.55; }
+  .entry-state-note strong { color: var(--dark); }
+ 
+  .entry-instability-note { font-size: 12.5px; color: var(--warn); background: var(--warn-bg); border: 1px solid var(--warn-border); border-radius: 3px; padding: 10px 14px; margin-bottom: 14px; line-height: 1.55; }
+  .entry-instability-note strong { color: var(--warn); }
+  .entry-instability-note a { color: var(--warn); font-weight: 700; }
  
   .entry-ready { background: var(--gray-lt); border-radius: 4px; padding: 14px 16px; margin-bottom: 12px; }
   .entry-ready-label { font-size: 10px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--dark); margin-bottom: 8px; }
@@ -147,31 +156,44 @@
  
 <div class="cal-band">
   <div class="cal-band-inner">
-    <span>AI & Technology Compliance</span><span>〰</span><span class="hi">K-12 Intelligence</span><span>〰</span><span>DPA · Tool Vetting · FERPA · Staff Training</span><span>〰</span><span class="hi">AI Governance · Accessibility</span><span>〰</span><span>The Language Firm</span><span>〰</span>
-    <span>AI & Technology Compliance</span><span>〰</span><span class="hi">K-12 Intelligence</span><span>〰</span><span>DPA · Tool Vetting · FERPA · Staff Training</span><span>〰</span><span class="hi">AI Governance · Accessibility</span><span>〰</span><span>The Language Firm</span><span>〰</span>
+    <span>Access Program Compliance</span><span>〰</span><span class="hi">TRIO · GEAR UP · Talent Search</span><span>〰</span><span>APR · DPA · FERPA</span><span>〰</span><span class="hi">AI Governance · Federal Integrity</span><span>〰</span><span>The Language Firm</span><span>〰</span>
+    <span>Access Program Compliance</span><span>〰</span><span class="hi">TRIO · GEAR UP · Talent Search</span><span>〰</span><span>APR · DPA · FERPA</span><span>〰</span><span class="hi">AI Governance · Federal Integrity</span><span>〰</span><span>The Language Firm</span><span>〰</span>
   </div>
 </div>
  
 <div class="cal-wrap">
  
   <div class="cal-header">
-    <div class="cal-eyebrow">The Language Firm — K-12 Compliance Intelligence</div>
-    <h1 class="cal-title">AI & Technology<br><em>Compliance Calendar</em></h1>
-    <p class="cal-desc">The federal calendar tells you when the law requires action. This calendar tells you when your AI and technology decisions create compliance exposure, before a reviewer finds the gap. No regulatory deadlines are invented. Every "recommended window" is labeled as practice, not statute.</p>
-    <p style="font-size: 12px; color: var(--gray); margin-top: 8px; letter-spacing: 0.3px;">Version: Spring 2026 &nbsp;·&nbsp; For practitioners and policy students</p>
-  </div>
+    <div class="cal-eyebrow">The Language Firm: Access Program Compliance Intelligence</div>
+    <h1 class="cal-title">Access Program<br><em>Compliance Calendar</em></h1>
+    <p class="cal-desc">Grant cycle milestones, APR windows, DPA renewal checkpoints, and AI governance actions for TRIO, GEAR UP, and Talent Search programs. Every entry is labeled honestly: hard federal date, recommended internal action, or program-officer-set window.</p>
  
-  <div class="cal-context">
-    <strong>How this calendar works.</strong> Federal program deadlines are set by statute and regulation. AI and technology compliance obligations are mostly documentation-driven — they don't have a single annual filing date. What they have are <em>trigger events</em>: a tool contract that expires, a DPA that wasn't renewed, a staff training cycle that wasn't documented, a board approval that was never recorded. This calendar maps when those triggers typically hit, what the documentation gap looks like to a reviewer, and what to do about it. The "Hard Deadline" entries are genuine fixed dates. Everything else is a recommended window based on when the risk typically surfaces.
+    <div class="cal-verified-bar">
+      <div class="vb-dot"></div>
+      <div><strong>Last verified: March 2026.</strong> &nbsp;Federal statutes and CFR citations are stable. Program officer contacts, competition announcements, and ED-issued windows are subject to change. Confirm all against your current Notice of Grant Award and with your program officer before acting.</div>
+    </div>
+ 
+    <div class="cal-advisory">
+      <span class="adv-icon">⚠</span>
+      <div>
+        <strong>Standing advisory — verify before acting.</strong> The federal program landscape for TRIO and GEAR UP has been in active flux since early 2025. ED staffing, program officer assignments, competition announcements, and continuation procedures have shifted in ways that are not uniformly published. Every deadline, contact, and window in this calendar should be confirmed against your current Notice of Grant Award, your active program officer, and current announcements at <a href="https://www.grants.gov" target="_blank">Grants.gov</a> and <a href="https://trio.ed.gov" target="_blank">trio.ed.gov</a> before any action is taken. This calendar is a structured orientation to federal obligations — not a substitute for direct verification with your grant officer. Entries with an amber notice flag specific areas of heightened current uncertainty.
+      </div>
+    </div>
+ 
+    <div class="cal-scope-banner">
+      <span class="scope-icon">📋</span>
+      <div>
+        <strong>For access programs receiving federal funds through TRIO, GEAR UP, Talent Search, or related Title IV HEA programs.</strong> Hard deadline entries reflect federal fiscal year dates and standing federal obligations. Program-officer entries identify where ED or your specific grant officer sets the window. Recommended internal actions are grounded in federal reporting obligations and labeled as practice, not regulation. Your grant officer and program notice are always the authoritative source for exact deadlines.
+      </div>
+    </div>
   </div>
  
   <div class="cal-legend">
     <div class="leg-item type-all active"     data-filter="all"    onclick="filterType('all')"><div class="leg-dot all"></div>All entries</div>
-    <div class="leg-item type-hard inactive"  data-filter="hard"   onclick="filterType('hard')"><div class="leg-dot hard"></div>Hard deadline — verified</div>
+    <div class="leg-item type-hard inactive"   data-filter="hard"   onclick="filterType('hard')"><div class="leg-dot hard"></div>Hard deadline: verified federal date</div>
     <div class="leg-item type-action inactive" data-filter="action" onclick="filterType('action')"><div class="leg-dot action"></div>Recommended internal action</div>
-    <div class="leg-item type-window inactive" data-filter="window" onclick="filterType('window')"><div class="leg-dot window"></div>Decision window — act before it closes</div>
+    <div class="leg-item type-state inactive"  data-filter="state"  onclick="filterType('state')"><div class="leg-dot state"></div>Program officer sets the window</div>
   </div>
-  <p style="font-size: 12px; color: var(--gray); margin-bottom: 28px; line-height: 1.6;"><strong style="color: var(--dark);">Decision window</strong> means there is a period of time during which a district must act to avoid a compliance gap. Unlike a hard deadline, there is no single regulatory filing date — but if the window closes without action, the district will enter the next phase (audit season, new school year, or contract renewal) without the required documentation in place.</p>
  
   <div class="cal-quarters">
     <div class="q-pill active" data-q="all" onclick="filterQ('all')">All quarters</div>
@@ -183,330 +205,452 @@
  
   <div class="cal-entries" id="entries">
  
-    <!-- ═══════════════════════ Q1 ═══════════════════════ -->
-    <div class="cal-section-label">Q1 — January through March</div>
+    <!-- ══ Q1 ══ -->
+    <div class="cal-section-label">Q1: January through March</div>
  
-    <div class="cal-entry window" data-q="q1" data-type="window">
+    <!-- APR Data Collection -->
+    <div class="cal-entry state" data-q="q1" data-type="state">
       <div class="entry-inner">
         <div class="entry-top">
-          <div class="entry-badge">Decision Window</div>
+          <div class="entry-badge">Program Officer Sets Window</div>
           <div class="entry-title-block">
-            <div class="entry-title">Mid-Year AI Tool Inventory Review</div>
-            <div class="entry-date">January 6 – February 28, 2026 · No regulatory filing date</div>
+            <div class="entry-title">TRIO & GEAR UP: Annual Performance Report Data Submission</div>
+            <div class="entry-date">Window set annually by ED. Typically opens January through February. Verify with your program officer each year.</div>
           </div>
         </div>
-        <p class="entry-body">January is when tool sprawl from the prior semester becomes visible. Teachers have adopted tools informally since August, and the gap between what's on your approved list and what's actually running in classrooms is now measurable. A mid-year inventory is the last realistic opportunity to pull unauthorized tools before they appear in a student data audit. What a reviewer asks: Did you know what tools were in use? Did you have signed DPAs for all of them?</p>
+        <div class="entry-instability-note">
+          <strong>Verify before acting.</strong> APR portal access and submission timelines have been subject to administrative changes since early 2025. Confirm your current window and submission requirements directly with your program officer and via <a href="https://trio.ed.gov" target="_blank">trio.ed.gov</a> before beginning data entry.
+        </div>
+        <div class="entry-state-note">
+          <strong>Why "program officer sets the window":</strong> APR submission deadlines vary by TRIO program type and are issued annually through program-specific Dear Project Director letters. Talent Search submits aggregated data on a different schedule than SSS or Upward Bound, which submit participant-level records. There is no single universal date that applies to all programs. Your program officer and your annual APR notice are the authoritative source for your specific deadline each year.
+        </div>
+        <p class="entry-body">All TRIO grantees are required to submit Annual Performance Report data through ED's TRIO APR Web Portal at trio.ed.gov. The APR is the primary federal accountability mechanism for TRIO programs. It captures participant counts, eligibility documentation, service delivery data, and outcome measures against the program's approved objectives. Inaccurate or incomplete APR submissions are among the most common findings in TRIO monitoring visits. Data that cannot be traced back to participant files at the time of submission is not defensible.</p>
         <div class="entry-ready">
-          <div class="entry-ready-label">What to complete in this window</div>
+          <div class="entry-ready-label">What to have ready before your APR window opens</div>
           <ul>
-            <li>Pull a complete inventory of AI and edtech tools in active use, both approved and unapproved</li>
-            <li>Flag any tool accessing student data without a signed DPA on file</li>
-            <li>Verify board approval is documented for each AI tool adoption since July</li>
-            <li>Remove or restrict any tool that cannot produce a DPA path within 30 days</li>
-            <li>Update the approved tool list. Remove tools with defunct vendors</li>
+            <li>Participant eligibility documentation: first-generation, low-income, or disability status verified and on file for every participant counted</li>
+            <li>Service delivery logs: each service type reported must be traceable to a dated record</li>
+            <li>Outcome data: secondary school completion, postsecondary enrollment, and financial aid application rates reconciled against participant files</li>
+            <li>Prior-year APR comparison: significant drops in any metric require a narrative explanation</li>
+            <li>Authorized organizational representative designation current in the TRIO APR Web Portal</li>
           </ul>
         </div>
         <div class="entry-source">
-          <strong>Basis:</strong> FERPA data governance requirements (20 U.S.C. §1232g) · CoSN Privacy Framework · Student Data Privacy Consortium NDPA standards
+          <strong>Source:</strong> Higher Education Act Title IV, Part A, Subpart 2 ·
+          <a href="https://www.ed.gov/grants-and-programs/grants-higher-education/trio-home-page" target="_blank">ED TRIO Programs, ed.gov</a>
+          · TRIO APR Web Portal: <a href="https://trio.ed.gov" target="_blank">trio.ed.gov</a>
+          · Deadline confirmed annually in your program's Dear Project Director letter
         </div>
       </div>
     </div>
  
+    <!-- Mid-Year Expenditure Review -->
     <div class="cal-entry action" data-q="q1" data-type="action">
       <div class="entry-inner">
         <div class="entry-top">
           <div class="entry-badge">Internal Action</div>
           <div class="entry-title-block">
-            <div class="entry-title">AI Incident Response Plan: Tabletop Review</div>
-            <div class="entry-date">February 1 – March 13, 2026 · Not a regulatory deadline</div>
+            <div class="entry-title">Mid-Year Grant Expenditure Pace Review</div>
+            <div class="entry-date">Recommended: February through March. Not a federal filing date.</div>
           </div>
         </div>
-        <p class="entry-body">Most districts have a general cybersecurity incident response plan. Fewer have one that covers AI-specific incidents: an AI tool generating harmful content, a vendor breach exposing student data ingested by an AI system, or a generative AI output used to make a consequential decision about a student. The PowerSchool breach (December 2024) demonstrated that AI-adjacent systems are now breach vectors. February is low-stakes; run a 90-minute tabletop before you need it for real.</p>
+        <p class="entry-body">Federal grant budgets are subject to the Uniform Guidance requirement that costs be necessary, reasonable, and allocable to the grant (2 CFR §200.403). Programs that underspend significantly by mid-year risk end-of-year scrambles to obligate funds before the budget period closes, which often produces undocumented or poorly justified expenditures. A pace problem identified in February can be corrected. One identified in August rarely can.</p>
         <div class="entry-ready">
-          <div class="entry-ready-label">What to review and document</div>
+          <div class="entry-ready-label">What to review internally</div>
           <ul>
-            <li>Confirm your existing incident response plan names AI tools explicitly</li>
-            <li>Identify who is responsible for AI-specific incidents (tech director, privacy officer, or superintendent)</li>
-            <li>Document the notification protocol if a student-facing AI tool generates harmful output</li>
-            <li>Confirm your vendor DPAs include breach notification timelines</li>
-            <li>Record the tabletop session: date, participants, outcomes, and any plan amendments</li>
+            <li>Pull current expenditure report against total grant budget by object code</li>
+            <li>Identify delayed hires, unfilled positions, or postponed purchases</li>
+            <li>Project forward to budget period end: will any line item be significantly under or over?</li>
+            <li>Document a corrective plan for any line item requiring reallocation</li>
+            <li>Review your Notice of Grant Award for any budget modification thresholds specific to your award. Under ED's expanded authorities, grantees have significant latitude to make budget transfers without prior approval — confirm the applicable threshold with your program officer before any significant reallocation. See 2 CFR §200.308 for the general framework.</li>
           </ul>
         </div>
         <div class="entry-source">
-          <strong>Basis:</strong> ED Student Privacy Policy Office guidance · CISA K-12 cybersecurity recommendations · State data breach notification laws (vary by state) · FERPA breach response obligations
+          <strong>Source:</strong> 2 CFR §200.403 (Uniform Guidance, factors affecting allowability of costs) ·
+          <a href="https://www.ecfr.gov/current/title-2/subtitle-A/chapter-II/part-200" target="_blank">Uniform Guidance, ecfr.gov</a>
+          · Budget revision framework: 2 CFR §200.308 · Budget modification thresholds: review your specific Notice of Grant Award and confirm with your program officer
         </div>
       </div>
     </div>
  
-    <div class="cal-entry hard" data-q="q1" data-type="hard">
-      <div class="entry-inner">
-        <div class="entry-top">
-          <div class="entry-badge">Hard Deadline</div>
-          <div class="entry-title-block">
-            <div class="entry-title">COPPA Compliance Review: Student-Facing Tools</div>
-            <div class="entry-date">April 22, 2026 · Amended COPPA Rule operator compliance deadline (16 CFR Part 312) · Ongoing district obligation triggered by each new tool deployment for students under 13</div>
-          </div>
-        </div>
-        <p class="entry-body">COPPA (15 U.S.C. §§6501–6506) requires verifiable parental consent before operators collect personal information from children under 13. In school settings, a district may authorize a vendor’s data collection on behalf of parents for tools used in the classroom, but this authorization does not eliminate the district’s responsibility to confirm the vendor’s COPPA compliance path and to disclose the tool’s data practices to parents. This is not an annual filing. It is triggered every time a new tool is deployed to students under 13. Q1 is when to confirm that every tool adopted since August has a documented compliance path on file.</p>
-        <div class="entry-ready">
-          <div class="entry-ready-label">What to verify for each student-facing tool</div>
-          <ul>
-            <li>Confirm the tool's COPPA compliance method: school-authorized consent, direct parental consent, or age-gate that excludes students under 13</li>
-            <li>If school-authorized: confirm the vendor's privacy policy and DPA describe the school authorization mechanism and restrict the vendor's use of collected data to educational purposes</li>
-            <li>Confirm parent notification language covers the tool's data collection in your annual FERPA/COPPA rights notice</li>
-            <li>Document the age range of students using each tool. No student under 13 should be on a tool without a documented compliance path.</li>
-          </ul>
-        </div>
-        <div class="entry-source">
-          <strong>Source:</strong>
-          <a href="https://www.ftc.gov/legal-library/browse/rules/childrens-online-privacy-protection-rule-coppa" target="_blank">FTC COPPA Rule, ftc.gov</a>
-          · 15 U.S.C. §§6501–6506 · FTC COPPA Rule: 16 CFR Part 312 · FERPA school official exception: 34 CFR §99.31(a)(1)(i)
-        </div>
-      </div>
-    </div>
- 
-    <!-- ═══════════════════════ Q2 ═══════════════════════ -->
-    <div class="cal-section-label">Q2 — April through June</div>
- 
-    <div class="cal-entry window" data-q="q2" data-type="window">
-      <div class="entry-inner">
-        <div class="entry-top">
-          <div class="entry-badge">Decision Window</div>
-          <div class="entry-title-block">
-            <div class="entry-title">Next-Year AI Tool Adoption Decisions: Procurement Window</div>
-            <div class="entry-date">April 1 – May 30, 2026 · Board approval and DPA execution must precede July 2026 deployment</div>
-          </div>
-        </div>
-        <p class="entry-body">Districts that want to deploy new AI tools at the start of next school year must begin procurement in Q2. A tool approved by the board in September after students are already using it is a retroactive approval, which is exactly what a compliance reviewer flags. Board approval, DPA execution, and staff training documentation all take time. April is the last realistic start date for a September-ready tool. What a reviewer asks: Was the tool vetted before it was used? When was the DPA signed? When did the board approve it?</p>
-        <div class="entry-ready">
-          <div class="entry-ready-label">What must happen before July deployment</div>
-          <ul>
-            <li>Tool vetting completed and documented: written decision to adopt, restrict, or reject with supporting evidence on file</li>
-            <li>DPA executed with vendor: signed, dated, and on file before any student data is shared</li>
-            <li>Board agenda item prepared: adoption memo, privacy review summary, and cost/benefit documented</li>
-            <li>Staff training plan drafted. Initial training must precede student access.</li>
-            <li>Output review policy written if the tool generates student-facing AI content</li>
-          </ul>
-        </div>
-        <div class="entry-source">
-          <strong>Basis:</strong> FERPA §99.31(a)(1) school official exception conditions · CoSN K-12 Cybersecurity and Privacy Framework · Student Data Privacy Consortium NDPA
-        </div>
-      </div>
-    </div>
- 
-    <div class="cal-entry action" data-q="q2" data-type="action">
+    <!-- DPA Renewal Audit -->
+    <div class="cal-entry action" data-q="q1" data-type="action">
       <div class="entry-inner">
         <div class="entry-top">
           <div class="entry-badge">Internal Action</div>
           <div class="entry-title-block">
-            <div class="entry-title">Staff AI Training Documentation Audit</div>
-            <div class="entry-date">May 1 – June 12, 2026 · Complete before last day of instruction</div>
+            <div class="entry-title">Data Privacy Agreement (DPA) Renewal Audit</div>
+            <div class="entry-date">Recommended: January. Not a regulatory deadline — a standing governance obligation.</div>
           </div>
         </div>
-        <p class="entry-body">If your district has deployed AI tools in classrooms, you have a training documentation obligation, not always by statute but by practice. When an AI tool incident occurs and a reviewer asks "were staff trained on appropriate use?", the answer must be a record, not a memory. May is when to confirm that every tool deployment this year has associated training documentation before the school year ends and records become harder to reconstruct.</p>
+        <p class="entry-body">Access programs use a range of third-party platforms for case management, advising, participant tracking, and communication. Every platform that touches participant data is subject to FERPA's data governance requirements (20 U.S.C. §1232g) and, for platforms used with students under 13, COPPA (15 U.S.C. §6501). DPAs expire. Vendors change terms of service. A DPA that was signed two years ago may no longer reflect the vendor's current data practices. January is when to audit the full DPA inventory before a new program year of tool adoption begins.</p>
         <div class="entry-ready">
-          <div class="entry-ready-label">What to document before June 12, 2026</div>
+          <div class="entry-ready-label">What to audit in January</div>
           <ul>
-            <li>Training completion records for every AI tool deployed to staff: dates, participants, and format</li>
-            <li>Training content on file: what was covered, who delivered it, and what the guardrails were</li>
-            <li>Acceptable Use Policy updated to reference AI tools specifically (not just "the internet")</li>
-            <li>Student AI use policy in effect, documented in student handbook or equivalent</li>
-            <li>Any disciplinary or misuse incidents documented with resolution. No undocumented incidents.</li>
+            <li>Complete inventory of all platforms in use: approved and unapproved, institutional and individual</li>
+            <li>Confirm a current, signed DPA exists for every platform that accesses participant data</li>
+            <li>Review expiration dates: any DPA expiring before September 30 requires renewal action now</li>
+            <li>Check vendor terms of service for changes since the DPA was signed</li>
+            <li>Flag any platform adopted by staff since the last audit that does not yet have a DPA</li>
           </ul>
         </div>
         <div class="entry-source">
-          <strong>Basis:</strong> FERPA school official exception conditions (34 CFR §99.31(a)(1)) — districts must maintain direct control over vendor data practices · District AUP obligations under CIPA (47 U.S.C. §254(h)) · CoSN K-12 Privacy Framework
+          <strong>Federal basis:</strong>
+          <a href="https://studentprivacy.ed.gov/" target="_blank">FERPA, studentprivacy.ed.gov</a>
+          · 20 U.S.C. §1232g · COPPA: 15 U.S.C. §6501
+          · No single federal DPA renewal date — this is a standing obligation triggered by contract terms and vendor changes
         </div>
       </div>
     </div>
  
+    <!-- ══ Q2 ══ -->
+    <div class="cal-section-label">Q2: April through June</div>
+ 
+    <!-- Continuation Application -->
+    <div class="cal-entry state" data-q="q2" data-type="state">
+      <div class="entry-inner">
+        <div class="entry-top">
+          <div class="entry-badge">Program Officer Sets Window</div>
+          <div class="entry-title-block">
+            <div class="entry-title">TRIO Continuation Application or Non-Competing Continuation</div>
+            <div class="entry-date">Typically April through May for programs in years 2–5 of a project period. Verify with your program officer annually.</div>
+          </div>
+        </div>
+        <div class="entry-instability-note">
+          <strong>Verify before acting.</strong> Continuation procedures and timelines have been subject to administrative changes across TRIO program types since early 2025. Do not assume prior-year procedures apply. Confirm your current continuation requirements directly with your program officer before preparing materials.
+        </div>
+        <div class="entry-state-note">
+          <strong>Why "program officer sets the window":</strong> TRIO continuation applications are not on a uniform federal calendar. ED issues continuation notices on a program-by-program basis. Your program officer sets the submission window. The federal obligation — continued eligibility documentation and performance reporting — is uniform. The deadline is not.
+        </div>
+        <p class="entry-body">Programs in years 2 through 5 of a TRIO project period submit a non-competing continuation application (or equivalent) to receive their next-year funding installment. This submission requires updated budget justification, confirmation of continued eligibility, and in some cycles, a narrative response to prior-year APR findings. Programs with unresolved APR findings from the prior year should expect additional scrutiny in the continuation review.</p>
+        <div class="entry-ready">
+          <div class="entry-ready-label">What to have ready</div>
+          <ul>
+            <li>Updated budget narrative: any changes from the approved budget require justification</li>
+            <li>Confirmation of grantee organization's continued eligibility status</li>
+            <li>Response narrative for any prior-year APR findings or conditions</li>
+            <li>Current authorized organizational representative on file with ED</li>
+            <li>Any required assurances or certifications current in Grants.gov/SAM.gov</li>
+          </ul>
+        </div>
+        <div class="entry-source">
+          <strong>Confirm with your program officer.</strong>
+          <a href="https://trio.ed.gov" target="_blank">ED TRIO Programs, trio.ed.gov</a>
+          · Continuation requirements vary by program type and project year
+        </div>
+      </div>
+    </div>
+ 
+    <!-- Talent Search Active Competition -->
     <div class="cal-entry hard" data-q="q2" data-type="hard">
       <div class="entry-inner">
         <div class="entry-top">
           <div class="entry-badge">Hard Deadline</div>
           <div class="entry-title-block">
-            <div class="entry-title">Annual DPA Renewal Review: Contract Expiration Audit</div>
-            <div class="entry-date">June 30, 2026 · DPAs on school-year terms expire; a lapsed DPA means student data sharing continues without a current agreement</div>
+            <div class="entry-title">Talent Search Program: Active Competition Submission Deadline</div>
+            <div class="entry-date">May 1, 2026 · 11:59 PM Eastern · ED-GRANT-26-022</div>
           </div>
         </div>
-        <p class="entry-body">Data Privacy Agreements are contracts. Most are written with a one-year term tied to the academic year. A DPA that expires on June 30 and is not renewed means the district is sharing student data with a vendor without a current agreement in effect. When a DPA lapses, the conditions for the FERPA school official exception (34 CFR §99.31(a)(1)) may no longer be met, creating potential FERPA exposure beginning July 1. This is not a "recommended review." This is a hard contract deadline that most districts do not track systematically. What a reviewer asks: Is the DPA current? Pull it. If the vendor is still active and the DPA expired six months ago, you have a gap.</p>
+        <div class="entry-instability-note">
+          <strong>Verify program officer contacts independently.</strong> The contacts listed below (reshone.moore@ed.gov / ben.witthoefft@ed.gov) were published in the March 2026 competition notice. ED staffing has changed significantly since early 2025. Confirm these contacts are still active before relying on them. The authoritative source for any updates to this competition is <a href="https://www.grants.gov/search-results-detail/361528" target="_blank">Grants.gov opportunity 361528</a>.
+        </div>
+        <p class="entry-body">The Talent Search Program competition was posted March 17, 2026. Applications are due May 1, 2026 at 11:59 PM Eastern. This is a discretionary competitive grant under TRIO (CFDA 84.044), administered by the Department of Labor on behalf of the Department of Education. Expected awards: 175. Award range: $250,000 to $10,000,000. Applications must be submitted electronically through Grants.gov. Programs that began Q4 2025 preparation are now in their final submission window. Programs that did not are in an accelerated timeline.</p>
         <div class="entry-ready">
-          <div class="entry-ready-label">What to complete before June 30</div>
+          <div class="entry-ready-label">What to have ready before May 1</div>
           <ul>
-            <li>Pull all DPAs currently on file. Confirm the expiration date on each.</li>
-            <li>Identify every DPA expiring between July 1 and December 31 of this calendar year</li>
-            <li>Begin renewal outreach to vendors no later than 60 days before expiration</li>
-            <li>Confirm vendor is still operational. Do not renew a DPA with a defunct or acquired company without reviewing what changed</li>
-            <li>Document any tool you cannot get a current DPA for. That tool cannot continue to access student data</li>
+            <li>Five-year APR performance data compiled and incorporated into the project narrative</li>
+            <li>Needs assessment documentation current for your target population</li>
+            <li>Project narrative drafted and reviewed against the published selection criteria in the program notice</li>
+            <li>Logic model, management plan, and budget narrative complete</li>
+            <li>All required assurances and certifications current in SAM.gov</li>
+            <li>Authorized organizational representative active in Grants.gov</li>
+            <li>Application submitted electronically — no paper submissions accepted</li>
           </ul>
         </div>
         <div class="entry-source">
           <strong>Source:</strong>
-          <a href="https://studentprivacy.ed.gov/" target="_blank">ED Student Privacy Policy Office, studentprivacy.ed.gov</a>
-          · FERPA 34 CFR §99.31(a)(1) school official exception, requires current agreement · Student Data Privacy Consortium NDPA template (annual term standard)
+          <a href="https://www.grants.gov/search-results-detail/361528" target="_blank">Grants.gov opportunity 361528</a>
+          · Funding Opportunity Number: ED-GRANT-26-022
+          · Contacts as published March 2026 — verify current status: reshone.moore@ed.gov / ben.witthoefft@ed.gov
+          · <a href="https://www.ed.gov/grants-and-programs/grants-higher-education/federal-trio-programs/talent-search-program" target="_blank">Talent Search Program, ed.gov</a>
         </div>
       </div>
     </div>
  
-    <!-- ═══════════════════════ Q3 ═══════════════════════ -->
-    <div class="cal-section-label">Q3 — July through September</div>
+    <!-- FERPA Annual Notification -->
+    <div class="cal-entry action" data-q="q2" data-type="action">
+      <div class="entry-inner">
+        <div class="entry-top">
+          <div class="entry-badge">Internal Action</div>
+          <div class="entry-title-block">
+            <div class="entry-title">FERPA Annual Notification: Review and Distribute</div>
+            <div class="entry-date">Recommended: May through June. No single federal filing date.</div>
+          </div>
+        </div>
+        <p class="entry-body">34 CFR §99.7 requires programs that maintain education records to notify participants of their FERPA rights annually. For access programs working with minor participants, this includes notifying parents or guardians. The notification must be provided by any means reasonably likely to reach families and must be available in required home languages. End-of-year review ensures the notification is current and distribution is documented before the next program year begins.</p>
+        <div class="entry-ready">
+          <div class="entry-ready-label">What to review and document</div>
+          <ul>
+            <li>Notification content current: rights to inspect, amend, and consent to disclosure</li>
+            <li>Addresses participants' rights for records maintained by the access program specifically</li>
+            <li>Distribution method documented: how was it sent, to whom, and when</li>
+            <li>Available in all required home languages for your participant population</li>
+            <li>Opt-out procedure for directory information documented and accessible</li>
+          </ul>
+        </div>
+        <div class="entry-source">
+          <strong>Source:</strong>
+          <a href="https://studentprivacy.ed.gov/ferpa" target="_blank">FERPA, studentprivacy.ed.gov</a>
+          · 34 CFR §99.7 · Annual standing obligation; no single federal filing date
+        </div>
+      </div>
+    </div>
  
+    <!-- AI Tool Governance Mid-Year -->
+    <div class="cal-entry action" data-q="q2" data-type="action">
+      <div class="entry-inner">
+        <div class="entry-top">
+          <div class="entry-badge">Internal Action</div>
+          <div class="entry-title-block">
+            <div class="entry-title">AI Tool Inventory: Mid-Year Vetting Review</div>
+            <div class="entry-date">Recommended: May through June. Not a regulatory deadline.</div>
+          </div>
+        </div>
+        <p class="entry-body">New AI tools are adopted by access program staff continuously throughout the year. Many are adopted without formal vetting, DPA review, or governing board documentation. A mid-year inventory review surfaces tools that have entered the program's workflow since January without completing the approval process. Tools used for advising, outreach, or case management that touch participant data without a signed DPA represent a FERPA exposure that grows with every additional interaction.</p>
+        <div class="entry-ready">
+          <div class="entry-ready-label">What to review mid-year</div>
+          <ul>
+            <li>Ask every staff member to list AI tools currently in use for program work — approved and unapproved</li>
+            <li>Flag any tool not on the approved inventory from January</li>
+            <li>Confirm DPA status for every newly identified tool before continued use</li>
+            <li>Review any tool used for participant-facing communication or advising for age-appropriate content safeguards</li>
+            <li>Document the review: date, reviewer, tools identified, actions taken</li>
+          </ul>
+        </div>
+        <div class="entry-source">
+          <strong>Federal basis:</strong>
+          <a href="https://studentprivacy.ed.gov/" target="_blank">FERPA, studentprivacy.ed.gov</a>
+          · 20 U.S.C. §1232g · COPPA: 15 U.S.C. §6501
+          · AI governance review is recommended practice grounded in existing federal data obligations
+        </div>
+      </div>
+    </div>
+ 
+    <!-- ══ Q3 ══ -->
+    <div class="cal-section-label">Q3: July through September</div>
+ 
+    <!-- Budget Period Close -->
     <div class="cal-entry hard" data-q="q3" data-type="hard">
       <div class="entry-inner">
         <div class="entry-top">
           <div class="entry-badge">Hard Deadline</div>
           <div class="entry-title-block">
-            <div class="entry-title">New School Year Tool Deployment: Documentation Must Precede Student Access</div>
-            <div class="entry-date">On or before first day of instruction, 2026–2027 · DPA signature date must precede first student use date. Sequencing is the audit test.</div>
+            <div class="entry-title">Federal Grant Budget Period Close</div>
+            <div class="entry-date">September 30 — federal fiscal year close. All obligations must be incurred by this date.</div>
           </div>
         </div>
-        <p class="entry-body">There is no federal statute that says "complete your DPA by August." What exists is a sequencing requirement that functions as a hard deadline: student data cannot be shared with a vendor until a DPA is in place. If your district deploys an AI tool to students on Day 1 of school and the DPA was not signed before Day 1, you have a retroactive documentation gap. This is the most common AI compliance failure pattern. The question a reviewer asks is simple: which came first: the DPA or the student data?</p>
-        <div class="entry-tlf-note">
-          <strong>Sequencing is the audit test.</strong> If you can produce a DPA with a signature date before the tool's first use date, you are compliant. If the DPA is dated after the tool went live, you have a documentation gap regardless of what the DPA says. Sequence your paperwork before you schedule your training.
-        </div>
+        <p class="entry-body">Under the Uniform Guidance (2 CFR §200.344), all costs charged to a federal grant must be incurred within the approved budget period. For grants aligned to the federal fiscal year, that period closes September 30. Costs incurred after September 30 cannot be charged to the prior budget period. Final expenditure reports and financial close-out processes follow the budget period end. Programs that have not met expenditure targets by this date have exhausted their window for corrective action.</p>
         <div class="entry-ready">
-          <div class="entry-ready-label">What must be complete before student instruction begins</div>
+          <div class="entry-ready-label">What to complete before September 30</div>
           <ul>
-            <li>DPA signed and dated. The signature date must precede the first student use date for every tool.</li>
-            <li>Board approval on record: adoption documented in board minutes before deployment</li>
-            <li>Output review policy written and distributed to staff for any generative AI tool</li>
-            <li>Staff training completed and documented. A training record must exist before student access.</li>
-            <li>Student and parent notification in place. AI tool use disclosed in handbook or equivalent</li>
+            <li>All purchase orders issued and goods or services received</li>
+            <li>All personnel costs incurred and documented through time-and-effort records</li>
+            <li>Final expenditure report drafted and reviewed against budget</li>
+            <li>Any unexpended funds flagged for program officer discussion — do not carry over without authorization</li>
+            <li>All participant records for the program year finalized and filed</li>
           </ul>
         </div>
         <div class="entry-source">
-          <strong>Basis:</strong> FERPA 34 CFR §99.31(a)(1), school official exception requires prior agreement · CoSN Privacy Framework, deployment sequencing standard
+          <strong>Source:</strong> 2 CFR §200.344 (Uniform Guidance, closeout) ·
+          <a href="https://www.ecfr.gov/current/title-2/subtitle-A/chapter-II/part-200" target="_blank">Uniform Guidance, ecfr.gov</a>
+          · Budget period end date confirmed in your specific grant award notice
         </div>
       </div>
     </div>
  
+    <!-- Time and Effort -->
     <div class="cal-entry action" data-q="q3" data-type="action">
       <div class="entry-inner">
         <div class="entry-top">
           <div class="entry-badge">Internal Action</div>
           <div class="entry-title-block">
-            <div class="entry-title">Board AI Policy Review: Annual Update Cycle</div>
-            <div class="entry-date">August 1 – September 30, 2026 · Align with opening board meeting cycle</div>
+            <div class="entry-title">Time-and-Effort Records: Year-End Reconciliation</div>
+            <div class="entry-date">Recommended: August through September, before budget period close.</div>
           </div>
         </div>
-        <p class="entry-body">Most districts adopted their first AI-related board policy in 2023 or 2024, often reactively and quickly. The AI landscape has changed materially since then: new state guidance in California, the collapse of multiple edtech vendors, generative AI now embedded in core tools like Google Workspace and Microsoft 365, and new federal rulemaking signals. An AI policy that hasn't been reviewed since 2023 likely doesn't cover the tools your district is currently using. What a reviewer asks: Does your board policy reflect your current practice? If not, which one controls?</p>
+        <p class="entry-body">The Uniform Guidance (2 CFR §200.430) requires that salaries charged to federal grants be supported by records that reflect the actual activity of each employee. For access programs, this means time-and-effort documentation for every staff member whose salary is charged entirely or partially to the grant. Federal monitoring visits consistently identify time-and-effort records as a primary documentation gap. Year-end reconciliation ensures that personnel cost documentation matches what was reported in the APR and what will appear in the final expenditure report.</p>
         <div class="entry-ready">
-          <div class="entry-ready-label">What to review and update annually</div>
+          <div class="entry-ready-label">What to reconcile before September 30</div>
           <ul>
-            <li>AI and technology use policy language: does it name generative AI specifically?</li>
-            <li>Procurement policy: does it require DPA and Workflow Fit review before board approval?</li>
-            <li>Student acceptable use policy: updated to address AI-generated content and academic integrity</li>
-            <li>Staff acceptable use policy: covers AI tools used in administrative and instructional workflows</li>
-            <li>Data governance policy: addresses third-party AI vendor data retention and deletion rights</li>
+            <li>Time-and-effort records complete for every grant-funded employee for the full program year</li>
+            <li>Records reflect actual activity, not budget estimates — after-the-fact certifications are a finding</li>
+            <li>Semi-annual certifications (for employees working solely on one federal program) signed and on file</li>
+            <li>Personnel activity reports (for employees splitting time across multiple grants or activities) complete and reconciled</li>
+            <li>Any staff changes mid-year documented with updated position descriptions and effort allocations</li>
           </ul>
         </div>
         <div class="entry-source">
-          <strong>Basis:</strong> CoSN K-12 Cybersecurity and Privacy Framework · CIPA internet safety policy requirements (47 U.S.C. §254(h)) · FERPA annual notification requirements (34 CFR §99.7)
+          <strong>Source:</strong> 2 CFR §200.430 (compensation for personal services) ·
+          <a href="https://www.ecfr.gov/current/title-2/subtitle-A/section-200.430" target="_blank">Uniform Guidance §200.430, ecfr.gov</a>
         </div>
       </div>
     </div>
  
-    <div class="cal-entry hard" data-q="q3" data-type="hard">
+    <!-- Incident Response Review -->
+    <div class="cal-entry action" data-q="q3" data-type="action">
       <div class="entry-inner">
         <div class="entry-top">
-          <div class="entry-badge">Hard Deadline</div>
+          <div class="entry-badge">Internal Action</div>
           <div class="entry-title-block">
-            <div class="entry-title">ADA Title II Digital Accessibility Compliance: WCAG 2.1 Level AA</div>
-            <div class="entry-date">April 24, 2026 (districts serving 50,000+ population) · April 26, 2027 (districts serving under 50,000) · DOJ final rule, published April 24, 2024</div>
+            <div class="entry-title">AI Incident Response Protocol: Annual Review</div>
+            <div class="entry-date">Recommended: August through September. Not a regulatory deadline.</div>
           </div>
         </div>
-        <p class="entry-body">The Department of Justice's final rule under Title II of the ADA (published April 24, 2024) requires all public school districts to make their websites, mobile apps, and digital content accessible according to WCAG 2.1 Level AA standards. Districts serving populations of 50,000 or more must comply by April 24, 2026. Districts serving under 50,000 have until April 26, 2027. The Title II rule covers content the district controls directly. Separately, Section 504 of the Rehabilitation Act requires districts to ensure that students with disabilities have equal access to instruction — which means AI and edtech tools deployed in classrooms must not create barriers for students with disabilities. A student who cannot access an AI tool their classmates use due to a disability may have a cognizable Section 504 claim, regardless of the district's population size.</p>
+        <p class="entry-body">Access programs using AI tools in advising, outreach, or case management face a growing category of AI-related incidents: data exposures through non-approved tools, harmful output reaching program participants, vendor failures affecting program data, and staff use of AI in violation of program policy. An incident response protocol that has not been reviewed in the past twelve months may not reflect the current tool landscape, the current staff roster, or current guidance from ED on participant data protection. Year-end is when to review and update before the next program year begins.</p>
         <div class="entry-ready">
-          <div class="entry-ready-label">What to verify and document before your compliance deadline</div>
+          <div class="entry-ready-label">What to review and update</div>
           <ul>
-            <li>Confirm your compliance deadline: April 24, 2026 (districts serving 50,000+) or April 26, 2027 (districts serving under 50,000). Use your 2020 decennial Census population, or 2022 SAIPE data for independent school districts.</li>
-            <li>Audit your district's own websites, portals, and digital content against WCAG 2.1 Level AA for Title II compliance. For vendor-provided edtech tools, request VPAT documentation and test for Section 504 equal access obligations. Automated scans catch only 30% of issues; manual testing with a screen reader (NVDA or JAWS) is required</li>
-            <li>Request VPAT (Voluntary Product Accessibility Template) from every vendor; document receipt and review</li>
-            <li>Embed WCAG 2.1 Level AA compliance language into all new vendor contracts and procurement RFPs</li>
-            <li>Document alternative access paths for students whose IEP or 504 plan requires accommodation</li>
+            <li>Notification chain current: names, roles, and contact methods for each step</li>
+            <li>Protocol covers all five incident types: data exposure, harmful output, deepfake or misuse, vendor failure, policy violation</li>
+            <li>24-hour documentation requirements named: what gets written down, by whom, and where it is filed</li>
+            <li>Communication review step documented: who approves communications to participants or families before they go out</li>
+            <li>Protocol signed and dated by program director and filed with the organization's compliance records</li>
           </ul>
         </div>
         <div class="entry-source">
-          <strong>Basis:</strong> ADA Title II final rule (DOJ, published April 24, 2024; 28 CFR Part 35) — governs district websites, apps, and digital content · Section 504 of the Rehabilitation Act (29 U.S.C. §794) — governs equal access to instruction for students with disabilities · WCAG 2.1 Level AA (W3C, 2018) · OCR enforcement authority over K-12 digital accessibility
+          <strong>Federal basis:</strong>
+          <a href="https://studentprivacy.ed.gov/" target="_blank">FERPA, studentprivacy.ed.gov</a>
+          · 20 U.S.C. §1232g · Incident response review is recommended practice grounded in FERPA breach notification obligations and grant assurance requirements
         </div>
       </div>
     </div>
  
-    <!-- ═══════════════════════ Q4 ═══════════════════════ -->
-    <div class="cal-section-label">Q4 — October through December</div>
+    <!-- ══ Q4 ══ -->
+    <div class="cal-section-label">Q4: October through December</div>
  
-    <div class="cal-entry window" data-q="q4" data-type="window">
+    <!-- New Competition / Recompete -->
+    <div class="cal-entry state" data-q="q4" data-type="state">
       <div class="entry-inner">
         <div class="entry-top">
-          <div class="entry-badge">Decision Window</div>
+          <div class="entry-badge">Program Officer Sets Window</div>
           <div class="entry-title-block">
-            <div class="entry-title">Vendor Viability Review: End-of-Year Tool Status Check</div>
-            <div class="entry-date">November 1 – December 19, 2026 · Complete before contract renewal signing</div>
+            <div class="entry-title">TRIO Recompetition: Application Preparation Window</div>
+            <div class="entry-date">Applications typically due April through May. Preparation window: October through December of the prior year.</div>
           </div>
         </div>
-        <p class="entry-body">The edtech vendor collapse pattern is not hypothetical. The PowerSchool breach and reported instability among several AI tutoring platforms in 2024 and 2025 have demonstrated that tools districts depend on can fail, get acquired, or become security liabilities mid-year. End-of-year is when to assess whether each AI tool in your inventory should be renewed, requires a replacement DPA due to acquisition, or should be sunset before next year. What a reviewer asks: Did you know your vendor was in financial distress? When did you find out, and what did you do?</p>
+        <div class="entry-state-note">
+          <strong>Why "program officer sets the window":</strong> TRIO competitive grant cycles are announced by ED through the Federal Register and Grants.gov. The announcement date and application deadline vary by program type and fiscal year. The preparation window listed here is recommended practice for programs in year 4 or 5 of a project period who will recompete in the next cycle.
+        </div>
+        <div class="entry-instability-note">
+          <strong>Current status as of March 2026:</strong> The Talent Search competition (ED-GRANT-26-022) was announced March 17, 2026 with a May 1, 2026 deadline. Other TRIO program competitions have been disrupted — as of early 2026, ED had not announced competitions for several TRIO programs despite programs reaching the end of their project periods. Monitor <a href="https://www.grants.gov" target="_blank">Grants.gov</a>, the Federal Register, and the <a href="https://coenet.org" target="_blank">Council for Opportunity in Education (coenet.org)</a> for announcements specific to your program type.
+        </div>
+        <p class="entry-body">TRIO grants are awarded competitively on five-year project periods. Programs in year 4 or 5 should begin preparing recompetition materials in Q4 of the year prior to the application deadline. The selection criteria for TRIO competitive applications include the quality of the project design, the grantee's past performance, the quality of personnel, and the adequacy of resources. Past performance is scored using APR data. Programs with strong, documented performance histories score higher. That documentation is built across the life of the grant, not assembled in the weeks before submission.</p>
         <div class="entry-ready">
-          <div class="entry-ready-label">What to assess for each vendor before contract renewal</div>
+          <div class="entry-ready-label">What to prepare in Q4</div>
           <ul>
-            <li>Confirm vendor is still independently operational. Check for acquisition announcements.</li>
-            <li>Review any data breach or security incident disclosed by the vendor this year</li>
-            <li>Confirm DPA terms still reflect current data practices. Acquisitions often change data sharing.</li>
-            <li>Review recent industry reporting and vendor communications for security incidents or ownership changes</li>
-            <li>Document the renewal decision: date, rationale, and who approved it</li>
+            <li>Pull five-year APR performance data: participant outcomes, service delivery rates, and trend analysis</li>
+            <li>Identify narrative gaps: where performance met or exceeded targets and where it did not, with explanation</li>
+            <li>Update needs assessment documentation for the target population</li>
+            <li>Review current project description against what the program actually delivers — alignment gaps are a finding</li>
+            <li>Confirm organizational eligibility for the next project period</li>
+            <li>Monitor Grants.gov and the Federal Register for the new competition announcement</li>
           </ul>
         </div>
         <div class="entry-source">
-          <strong>Basis:</strong> FERPA 34 CFR §99.31(a)(1), school official exception requires current, valid agreement · Student Data Privacy Consortium NDPA standard, vendor notification requirements on change of control · PowerSchool breach disclosure (PowerSchool, January 2025)
+          <strong>Monitor for announcements:</strong>
+          <a href="https://www.grants.gov" target="_blank">Grants.gov</a> ·
+          <a href="https://trio.ed.gov" target="_blank">ED TRIO Programs, trio.ed.gov</a>
+          · Selection criteria: current program notice, published with each competition
         </div>
       </div>
     </div>
  
+    <!-- Annual AI and Data Governance Review — Access Program Edition -->
     <div class="cal-entry action" data-q="q4" data-type="action">
       <div class="entry-inner">
         <div class="entry-top">
           <div class="entry-badge">Internal Action</div>
           <div class="entry-title-block">
-            <div class="entry-title">Annual AI Governance Checkup: Full System Review</div>
-            <div class="entry-date">October 1 – November 20, 2026 · Complete before Q2 procurement decisions begin</div>
+            <div class="entry-title">Annual AI and Data Governance Review: Access Program Edition</div>
+            <div class="entry-date">Recommended: October through November. Not a regulatory deadline — grounded in standing federal data obligations.</div>
           </div>
         </div>
-        <p class="entry-body">The Governance Checkup is the one annual review that touches every layer: tool inventory, DPA status, board policy, staff training documentation, incident response protocol, and accessibility compliance. Q4 is the right time because it follows the first semester of the school year, which is enough time to see how this year's tools are actually being used, and precedes the Q2 procurement window when next-year adoption decisions begin. A documented Governance Checkup is also the artifact you produce when a reviewer asks "what does your AI governance process look like?"</p>
+        <p class="entry-body">No single federal regulation requires an annual AI governance review for TRIO or GEAR UP programs. This review is recommended practice built on obligations that do apply: FERPA governs every tool that accesses participant records (20 U.S.C. §1232g); the Uniform Guidance requires that grantees maintain adequate internal controls as a condition of award (2 CFR §200.303); and grant assurances obligate programs to demonstrate responsible data governance throughout the budget period. As AI tool adoption in access programs has accelerated, the gap between what programs actually use and what they can document has widened significantly. A Q4 review closes that gap before a new program year opens and before any recompetition documentation is assembled — both contexts where undocumented tool use becomes a liability.</p>
         <div class="entry-ready">
-          <div class="entry-ready-label">What the Governance Checkup produces</div>
+          <div class="entry-ready-label">What the annual review covers</div>
           <ul>
-            <li>Scored assessment across all five governance domains: Reviewed, Verified, and Leading per domain</li>
-            <li>Findings memo with specific documentation gaps, prioritized by reviewer risk</li>
-            <li>Remediation list: what to fix before Q2 procurement decisions and before any audit</li>
-            <li>Evidence of a documented governance process: the artifact a reviewer accepts as proof of due diligence</li>
+            <li>Complete AI and third-party platform inventory: every tool used for advising, case management, outreach, or participant communication — approved and unapproved, institutional and individual staff tools</li>
+            <li>DPA status for every tool that accesses participant data: confirmed, expiring, or missing — any missing DPA requires resolution before continued use</li>
+            <li>Uniform Guidance internal controls check (2 CFR §200.303): do current tool-use practices meet the grantee's obligation to safeguard federal program assets and participant information?</li>
+            <li>Incident response protocol: current, signed, and filed with program compliance records</li>
+            <li>Staff AI governance training: documented for all program staff who use AI tools in program work — attendance, content, facilitator, date</li>
+            <li>Output review policy documented for every participant-facing AI tool in use</li>
+            <li>Full documentation producible within one business day if requested by a federal reviewer</li>
           </ul>
         </div>
         <div class="entry-source">
-          <strong>Basis:</strong> FERPA data governance requirements · CoSN K-12 Privacy Framework
+          <strong>Federal basis:</strong>
+          <a href="https://studentprivacy.ed.gov/" target="_blank">FERPA, studentprivacy.ed.gov</a>
+          · 20 U.S.C. §1232g · Uniform Guidance internal controls: 2 CFR §200.303 ·
+          <a href="https://www.ecfr.gov/current/title-2/subtitle-A/chapter-II/part-200/section-200.303" target="_blank">ecfr.gov §200.303</a>
+          · Grant assurance requirements: your program's Notice of Grant Award
+          · TLF Access Programs resources: <a href="https://www.languagefirm.org/theaccessprograms" target="_blank">languagefirm.org/theaccessprograms</a>
         </div>
       </div>
     </div>
  
-    
+    <!-- Staff Training Documentation -->
+    <div class="cal-entry action" data-q="q4" data-type="action">
+      <div class="entry-inner">
+        <div class="entry-top">
+          <div class="entry-badge">Internal Action</div>
+          <div class="entry-title-block">
+            <div class="entry-title">Staff Training Documentation: Year-End Compliance Record</div>
+            <div class="entry-date">Recommended: November through December. Not a single federal filing date.</div>
+          </div>
+        </div>
+        <p class="entry-body">Federal monitoring visits for TRIO and GEAR UP programs routinely examine staff training records as evidence of program capacity and responsible administration. Reviewers ask whether staff have received documented training on FERPA obligations, grant compliance requirements, and — increasingly — AI governance and participant data protection. Training that occurred but was not documented did not happen from a compliance standpoint. Year-end is when to confirm that all required training is documented, signed, and filed before the next program year begins.</p>
+        <div class="entry-ready">
+          <div class="entry-ready-label">What to document before December 31</div>
+          <ul>
+            <li>FERPA training: attendance log, content summary, facilitator name, date — for all program staff</li>
+            <li>AI governance training: signed completion records for all staff using AI tools in program work</li>
+            <li>Grant compliance orientation: documented for any staff hired mid-year</li>
+            <li>Incident response training: confirmation that all staff know the notification chain and their role in it</li>
+            <li>Training records filed in a central, accessible location — not in individual staff files</li>
+          </ul>
+        </div>
+        <div class="entry-source">
+          <strong>Federal basis:</strong> Grant assurance requirements under the program's Notice of Grant Award ·
+          <a href="https://studentprivacy.ed.gov/" target="_blank">FERPA, studentprivacy.ed.gov</a>
+          · TLF Staff Coverage Package: <a href="https://www.languagefirm.org/theaccessprograms" target="_blank">languagefirm.org/theaccessprograms</a>
+        </div>
+      </div>
+    </div>
  
   </div><!-- /cal-entries -->
  
   <div class="cal-statbar">
     <div class="cal-stat">
-      <div class="cal-stat-val">4 verified</div>
-      <div class="cal-stat-lbl">Hard deadlines with confirmed primary source citations</div>
+      <div class="cal-stat-val">2 verified</div>
+      <div class="cal-stat-lbl">Hard federal deadlines: May 1 Talent Search application and September 30 fiscal year close</div>
     </div>
     <div class="cal-stat">
-      <div class="cal-stat-val">4 internal</div>
-      <div class="cal-stat-lbl">Recommended actions, labeled as practice, not regulation</div>
+      <div class="cal-stat-val">7 internal</div>
+      <div class="cal-stat-lbl">Recommended actions grounded in federal obligation, labeled as practice not regulation</div>
     </div>
     <div class="cal-stat">
-      <div class="cal-stat-val">3 windows</div>
-      <div class="cal-stat-lbl">Decision windows: act before they close or the gap opens</div>
+      <div class="cal-stat-val">3 officer-set</div>
+      <div class="cal-stat-lbl">Program officer or ED sets the window — federal hook documented, exact date is not uniform</div>
     </div>
   </div>
  
   <div class="cal-footer-note">
-    <strong>About this calendar's accuracy standards.</strong> Every entry is labeled by type: verified hard deadline, recommended internal action, or decision window. Hard deadlines cite primary statutory or regulatory sources. Recommended windows are labeled honestly — they represent best-practice timing based on when compliance gaps typically surface, not regulatory requirements. Dates reflect the 2025–2026 academic year. This calendar does not constitute legal advice. Verify all requirements with district legal counsel and your state education agency. Version: Spring 2026. Further compliance resources and professional guidance are available at <a href="https://languagefirm.org" target="_blank">languagefirm.org</a>.
+    <strong>About this calendar's accuracy standards.</strong> Every entry is grounded in federal statute, regulation, or Uniform Guidance, with no program-officer-set filing dates presented as hard federal dates. Hard deadline entries reflect standing federal fiscal year dates or ED-issued submission requirements. Program officer entries identify where the federal obligation is real and national but the grantee-facing window is set by ED program staff. Recommended internal action entries are labeled explicitly as practice, not regulation, with the federal provision that makes the practice consequential. Source citations are included on every entry. Your program officer and your Notice of Grant Award are always the authoritative source for exact deadlines specific to your award.
+    <br><br>
+    <strong>Federal landscape note.</strong> This calendar was last verified March 2026. TRIO and GEAR UP program operations, competition schedules, and ED staffing have been in active flux since early 2025. Program officer contacts, continuation procedures, and competition announcements should be independently confirmed before any action is taken. Entries carrying an amber instability notice identify areas of heightened current uncertainty.
+    <br><br>
+    <strong>Need a compliance system, not just a calendar?</strong> The <a href="https://www.languagefirm.org/theaccessprograms">TLF Evidence Monitor Maintenance Core</a> and <a href="https://www.languagefirm.org/theaccessprograms">Audit Readiness Retainer</a> keep your program's documentation current and reviewer-ready throughout the year — not just at filing time.
   </div>
  
 </div><!-- /cal-wrap -->
